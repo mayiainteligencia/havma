@@ -1,0 +1,46 @@
+{
+  "nombre": "Circuito Exterior Medido",
+  "proveedor": "MOST / proveedor de medición",
+  "hoja_datos": "HOJA",
+  "hoja_resumen": "RESUMEN",
+  "hoja_filtros": "FILTROS",
+  "header_row": 0,
+  "columnas": {
+    "latitude": "latitud decimal",
+    "longitude": "longitud decimal",
+    "name": "nombre del soporte",
+    "address": "dirección",
+    "metropolitan area": "zona metropolitana",
+    "city": "ciudad",
+    "province": "estado",
+    "type": "tipo de soporte (normalizar)",
+    "male_users": "usuarios masculinos",
+    "female_users": "usuarios femeninos",
+    "a18_25_users": "usuarios 18-25",
+    "a26_40_users": "usuarios 26-40",
+    "a41_55_users": "usuarios 41-55",
+    "a55_users": "usuarios 55+",
+    "income_a_users": "NSE A",
+    "income_b_users": "NSE B",
+    "income_c_users": "NSE C",
+    "income_d_users": "NSE D",
+    "income_e_users": "NSE E",
+    "total_users": "usuarios únicos totales",
+    "total_hits": "impactos brutos",
+    "reach_auf": "alcance en zona (%) — viene directo en %",
+    "reach_country": "alcance nacional (%)"
+  },
+  "columnas_ignorar": ["measures", "structure", "affinity"],
+  "notas_calidad": [
+    "measures y structure vienen 100% vacías",
+    "affinity viene en 0 en los 77 registros de este ejemplo (no es nula, es cero)",
+    "city y province traen el mismo valor abreviado (CDMX, GDL, MTY, EDO MEX...)",
+    "type trae mayúsculas inconsistentes: 'Puente' y 'PUENTE' conviven",
+    "las 77 coordenadas caen dentro de México, ninguna se descarta"
+  ],
+  "hoja_resumen_columnas": [
+    "Variable", "Población total", "Población del target", "Usuarios únicos",
+    "Alcance total", "Alcance al target", "Frecuencia", "Impactos",
+    "Gross Rating Points (GRP)", "Target Rating Point (TRP)", "Soportes evaluados"
+  ]
+}

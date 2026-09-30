@@ -1,0 +1,33 @@
+{
+  "nombre": "Inventario MXM-Planta",
+  "proveedor": "MXM Medios",
+  "hoja_datos": "TOTAL INVENTARIO",
+  "header_row": 1,
+  "notas_calidad": [
+    "Fila 0 tiene caracter '|' como header basura — usar header=1",
+    "705 filas de datos; 7 son duplicados exactos (indices 682,683,686,687,689,690,704) — se eliminan con drop_duplicates",
+    "OJO: las filas 655-704 NO son un bloque duplicado. Son 50 soportes reales de Queretaro (24), Morelos (20) y Puebla (6); ninguna de sus CLAVEs aparece antes. Truncar en 655 borra inventario legitimo",
+    "DISPONIBILIDAD mezcla texto libre, fechas ISO y nulos (101 NaN)",
+    "ESTRUCTURA tiene 24 variantes para 6 tipos reales (mayusculas, acentos, espacios previos)",
+    "VISTA tiene 16 variantes para 5 valores reales, incluidas combinaciones tipo 'Cruzada y natural'",
+    "ESTADO trae CDMX y 'Ciudad de Mexico' como formas de lo mismo",
+    "1 fila con #VALUE! en TARIFA (clave 01.062B)",
+    "20 soportes sin coordenadas validas — mapeable=false, lat/lon en 0"
+  ],
+  "columnas": {
+    "CLAVE": "id del operador",
+    "ESTADO": "estado (normalizar CDMX/Ciudad de México)",
+    "UBICACIÓN": "dirección",
+    "ALCALDIA O MUNICIPIO": "municipio",
+    "ESTRUCTURA": "tipo de estructura (normalizar 24→6 categorías)",
+    "BASE": "base en metros",
+    "ALTURA": "altura en metros",
+    "TOTAL MTS2": "superficie en m²",
+    "VISTA": "orientación (normalizar 16→5 categorías)",
+    "TARIFA PUBLICADA": "tarifa mensual en MXN (puede traer #VALUE!)",
+    "DISPONIBILIDAD": "estado de disponibilidad (mixto: texto+fecha+nulo)",
+    "LATITUD": "latitud decimal (puede ser nula)",
+    "LONGITUD": "longitud decimal (puede ser nula)",
+    "TIPO DE LONA": "'Reproduce spot...' indica DOOH"
+  }
+}

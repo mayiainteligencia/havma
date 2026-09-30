@@ -1,0 +1,18 @@
+dataEx/
+reports/
+.venv/
+~$*
+__pycache__/
+*.pyc
+canonical/
+rules/
+
+# Monorepo (appSysy/frontend, appSysy/backend, appSysy/backend/monitorsol):
+# node_modules y builds nunca se versionan, se reinstalan con npm/pip.
+node_modules/
+dist/
+dist-ssr/
+venv/
+*.local
+.env
+.DS_Store

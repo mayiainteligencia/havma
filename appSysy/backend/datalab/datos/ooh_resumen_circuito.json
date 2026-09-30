@@ -1,0 +1,109 @@
+{
+  "meta": {
+    "fuente": "circuito_exterior_resumen",
+    "generado": "2026-08-12T16:28:44.794269Z",
+    "archivo_origen": "circuito exterior medido ejemplo.xlsx",
+    "total_registros": 9
+  },
+  "datos": [
+    {
+      "zona": "Nacional",
+      "poblacion_total": 60918273,
+      "usuarios_unicos": 9309351,
+      "alcance_pct": 15.282,
+      "frecuencia": 17.60109,
+      "impactos_totales": 163854720,
+      "grp": 268.97466,
+      "trp": 268.97985,
+      "soportes": 77
+    },
+    {
+      "zona": "Ciudades Pauta",
+      "poblacion_total": 26470952,
+      "usuarios_unicos": 9309351,
+      "alcance_pct": 35.168,
+      "frecuencia": 17.60109,
+      "impactos_totales": 163854720,
+      "grp": 618.99821,
+      "trp": 618.99512,
+      "soportes": null
+    },
+    {
+      "zona": "Zona metropolitana de Morelia",
+      "poblacion_total": 640598,
+      "usuarios_unicos": 333843,
+      "alcance_pct": 52.114,
+      "frecuencia": 34.89928,
+      "impactos_totales": 11650882,
+      "grp": 1818.75092,
+      "trp": 1818.74134,
+      "soportes": 10
+    },
+    {
+      "zona": "Zona metropolitana de Monterrey",
+      "poblacion_total": 3994746,
+      "usuarios_unicos": 1637725,
+      "alcance_pct": 40.997,
+      "frecuencia": 14.30073,
+      "impactos_totales": 23420661,
+      "grp": 586.28661,
+      "trp": 586.28698,
+      "soportes": 11
+    },
+    {
+      "zona": "Zona metropolitana de Cancún",
+      "poblacion_total": 729335,
+      "usuarios_unicos": 255036,
+      "alcance_pct": 34.968,
+      "frecuencia": 23.09522,
+      "impactos_totales": 5890113,
+      "grp": 807.60049,
+      "trp": 807.59372,
+      "soportes": 6
+    },
+    {
+      "zona": "Playa del Carmen",
+      "poblacion_total": 235025,
+      "usuarios_unicos": 80435,
+      "alcance_pct": 34.224,
+      "frecuencia": 8.75482,
+      "impactos_totales": 704194,
+      "grp": 299.62515,
+      "trp": 299.62498,
+      "soportes": 2
+    },
+    {
+      "zona": "Zona metropolitana del Valle de México",
+      "poblacion_total": 16151357,
+      "usuarios_unicos": 5465022,
+      "alcance_pct": 33.836,
+      "frecuencia": 18.70405,
+      "impactos_totales": 102218059,
+      "grp": 632.87598,
+      "trp": 632.87032,
+      "soportes": 29
+    },
+    {
+      "zona": "Zona metropolitana de Mérida",
+      "poblacion_total": 966404,
+      "usuarios_unicos": 325913,
+      "alcance_pct": 33.724,
+      "frecuencia": 21.24912,
+      "impactos_totales": 6925365,
+      "grp": 716.61179,
+      "trp": 716.60538,
+      "soportes": 12
+    },
+    {
+      "zona": "Zona metropolitana de Guadalajara",
+      "poblacion_total": 3753487,
+      "usuarios_unicos": 1211377,
+      "alcance_pct": 32.273,
+      "frecuencia": 10.7691,
+      "impactos_totales": 13045446,
+      "grp": 347.55538,
+      "trp": 347.55132,
+      "soportes": 7
+    }
+  ]
+}
