@@ -12,8 +12,9 @@ dist
 dist-ssr
 *.local
 
-# Generado por ../../prep_data.py — no se versiona, se regenera con el script.
-src/data/mock.json
+# Generado por ../../prep_data.py — SÍ se versiona (canonical/ y rules/, sus
+# fuentes, están gitignored en la raíz): sin esto el build de Vercel truena
+# por falta de src/data/mock.json. Si regeneras los datos, vuelve a commitearlo.
 *.db
 
 # Editor directories and files
