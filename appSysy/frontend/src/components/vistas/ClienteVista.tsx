@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { brandingConfig } from '../../config/branding';
 import { fmtMXNCorto } from '../../data/media';
 import { mock, getEjercicio, listaVersiones, setEstadoVersion, useOverrides } from '../../data/store';
+import { interpolarEscenario, touchpointQueMasPierdeAlcance } from '../../data/interpolate';
 import { Panel, Kpi, OrigenTag, Semaforo, wrap, inner, useIsMobile } from '../shared/ui';
 import { VistaHeader, Tabla, DonaChart } from './_shared';
+import { InsightsCard } from './InsightsCard';
 import { useToast } from '../shared/toast';
 import { useConfirm } from '../shared/confirm';
 
@@ -35,6 +37,7 @@ export const ClienteVista: React.FC<Props> = ({ subId }) => {
     <div style={wrap(isMobile)}>
       <div style={inner}>
         <VistaHeader vistaId="cliente" subId={subId} />
+        <InsightsCard rol="cliente" marcaId={marca.id} />
 
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 18 }}>
           {mock.marcas.map(m => (
@@ -92,23 +95,38 @@ export const ClienteVista: React.FC<Props> = ({ subId }) => {
         )}
 
         {subId === 'aprobaciones' && (
-          <Panel title="Aprobaciones pendientes de tu campaña">
-            <Tabla
-              keyOf={v => v.id}
-              columnas={[
-                { header: 'Etiqueta', render: v => <span style={{ fontWeight: 600 }}>{v.etiqueta}</span> },
-                { header: 'Motivo', render: v => v.motivo },
-                { header: 'Factor', align: 'right', render: v => `${v.factor_presupuesto}x` },
-                { header: 'Acciones', align: 'right', render: v => (
-                  <div style={{ display: 'flex', gap: 6, justifyContent: 'flex-end' }}>
-                    <button onClick={() => resolver(v.id, true)} style={{ border: 'none', background: colores.exito, color: '#fff', fontSize: 11.5, fontWeight: 700, padding: '5px 10px', borderRadius: 8, cursor: 'pointer' }}>Aprobar</button>
-                    <button onClick={() => resolver(v.id, false)} style={{ border: `1px solid ${colores.peligro}`, background: 'transparent', color: colores.peligro, fontSize: 11.5, fontWeight: 700, padding: '5px 10px', borderRadius: 8, cursor: 'pointer' }}>Rechazar</button>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+            {versionesMarca.filter(v => v.estado === 'pendiente').map(v => {
+              const base = interpolarEscenario(ejercicio.escenarios, 1);
+              const propuesta = interpolarEscenario(ejercicio.escenarios, v.factor_presupuesto);
+              const peor = base && propuesta ? touchpointQueMasPierdeAlcance(base, propuesta) : null;
+              const deltaAlcance = base && propuesta ? (propuesta.totales.alcance - base.totales.alcance) * 100 : null;
+              const recorte = v.factor_presupuesto < 1;
+              return (
+                <Panel key={v.id} title={v.etiqueta}>
+                  <p style={{ margin: '0 0 10px', fontSize: 13.5, color: colores.textoMedio }}>
+                    <strong style={{ color: colores.textoClaro }}>Versión aprobada</strong> vs. <strong style={{ color: colores.textoClaro }}>propuesta</strong>: {v.motivo} —
+                    cambia la inversión en {(v.delta_inversion ?? 0) >= 0 ? '+' : ''}{fmtMXNCorto(v.delta_inversion ?? 0)} ({v.factor_presupuesto}x).
+                  </p>
+                  {deltaAlcance !== null && (
+                    <p style={{ margin: '0 0 10px', fontSize: 13, color: colores.textoMedio, padding: 10, borderRadius: 10, background: colores.fondoSecundario }}>
+                      {recorte
+                        ? <>Si recortas al {(v.factor_presupuesto * 100).toFixed(0)}% del presupuesto, pierdes ~{Math.abs(deltaAlcance).toFixed(1)} pts de alcance.
+                            {peor && <> El recorte menos dañino sería en <strong>{peor.touchpoint}</strong>.</>}</>
+                        : <>Con este aumento ganas ~{deltaAlcance.toFixed(1)} pts de alcance adicional.</>}
+                    </p>
+                  )}
+                  <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end' }}>
+                    <button onClick={() => resolver(v.id, true)} style={{ border: 'none', background: colores.exito, color: '#fff', fontSize: 11.5, fontWeight: 700, padding: '6px 14px', borderRadius: 8, cursor: 'pointer' }}>Aprobar</button>
+                    <button onClick={() => resolver(v.id, false)} style={{ border: `1px solid ${colores.peligro}`, background: 'transparent', color: colores.peligro, fontSize: 11.5, fontWeight: 700, padding: '6px 14px', borderRadius: 8, cursor: 'pointer' }}>Rechazar</button>
                   </div>
-                ) },
-              ]}
-              filas={versionesMarca.filter(v => v.estado === 'pendiente')}
-            />
-          </Panel>
+                </Panel>
+              );
+            })}
+            {versionesMarca.filter(v => v.estado === 'pendiente').length === 0 && (
+              <Panel title="Aprobaciones pendientes de tu campaña"><p style={{ fontSize: 13, color: colores.textoMedio, margin: 0 }}>No hay propuestas nuevas por revisar.</p></Panel>
+            )}
+          </div>
         )}
 
         {subId === 'historial' && (

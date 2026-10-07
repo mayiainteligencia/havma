@@ -222,10 +222,14 @@ def build_versiones(ejercicios: list[dict]) -> list[dict]:
         ("v-cambio-b", "Cambio B · -10% presupuesto", "Recorte de presupuesto por ajuste corporativo", 0.9, 3, "Planeación", "pendiente"),
     ]:
         interp = interpolar_escenario(base["escenarios"], factor)
+        fecha_hora = dt.datetime.combine(hoy - dt.timedelta(days=dias_atras), dt.time(9 + dias_atras % 8, 15 * (dias_atras % 4)))
         out.append({
             "id": id_, "origen": "simulado", "ejercicio_base_id": base["id"], "etiqueta": etiqueta, "motivo": motivo,
-            "autor": autor, "fecha": (hoy - dt.timedelta(days=dias_atras)).isoformat(), "estado": estado,
-            "factor_presupuesto": factor, "interpolado": interp,
+            "autor": autor, "rol": "planner", "fecha": fecha_hora.date().isoformat(), "hora": fecha_hora.strftime("%H:%M"),
+            "estado": estado, "factor_presupuesto": factor,
+            "delta_inversion": (interp["presupuesto_total"] - base["exercise"]["presupuesto"]) if interp else 0,
+            "snapshot_touchpoints": [{"nombre": t["touchpoint"], "inversion": t["inversion"]} for t in interp["por_touchpoint"]] if interp else None,
+            "interpolado": interp,
         })
     return out
 

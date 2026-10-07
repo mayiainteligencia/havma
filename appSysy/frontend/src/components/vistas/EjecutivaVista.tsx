@@ -1,9 +1,11 @@
 import React from 'react';
 import { brandingConfig } from '../../config/branding';
 import { fmtMXNCorto, fmt } from '../../data/media';
-import { mock, listaCampanasFlow, listaVersiones, useOverrides } from '../../data/store';
+import { mock, listaCampanasFlow, listaVersiones, getMonitoreo, useOverrides } from '../../data/store';
+import { cprpReal, cumplimientoPct } from '../../data/metricas';
 import { Panel, Kpi, OrigenTag, wrap, inner, useIsMobile } from '../shared/ui';
 import { VistaHeader, Tabla, DonaChart } from './_shared';
+import { InsightsCard } from './InsightsCard';
 
 interface Props { subId: string; onNavigate: (target: string) => void }
 
@@ -20,13 +22,14 @@ export const EjecutivaVista: React.FC<Props> = ({ subId, onNavigate }) => {
 
         {subId === 'resumen' && (
           <>
+            <InsightsCard rol="ceo" />
             <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr 1fr' : 'repeat(4, 1fr)', gap: 14, marginBottom: 18 }}>
               <Kpi label="Inversión total gestionada" value={fmtMXNCorto(marcas.reduce((s, m) => s + m.presupuesto, 0))} />
               <Kpi label="Cuentas" value={fmt(marcas.length)} sub={`${marcas.filter(m => m.origen === 'real').length} reales`} />
               <Kpi label="Campañas del Flow" value={fmt(listaCampanasFlow().length)} />
               <Kpi label="Versiones pendientes" value={fmt(listaVersiones(overrides).filter(v => v.estado === 'pendiente').length)} />
             </div>
-            <Panel title="Inversión por marca contra presupuesto aprobado">
+            <Panel title="Inversión por marca contra presupuesto aprobado" style={{ marginBottom: 18 }}>
               <DonaChart datos={marcas.map(m => ({ nombre: m.nombre, valor: m.presupuesto }))} formatear={fmtMXNCorto} />
               <Tabla
                 keyOf={m => m.id}
@@ -37,6 +40,25 @@ export const EjecutivaVista: React.FC<Props> = ({ subId, onNavigate }) => {
                   { header: '% del total', align: 'right', render: m => `${((m.presupuesto / marcas.reduce((s, x) => s + x.presupuesto, 0)) * 100).toFixed(1)}%` },
                 ]}
                 filas={marcas}
+              />
+            </Panel>
+            <Panel title="Ranking de medios por eficiencia (CPRP real, monitoreo)">
+              <Tabla
+                keyOf={m => m[0]}
+                columnas={[
+                  { header: 'Medio', render: m => <span style={{ fontWeight: 600 }}>{m[0]}</span> },
+                  { header: 'Cumplimiento', align: 'right', render: m => `${(m[1] as number).toFixed(0)}%` },
+                  { header: 'CPRP real', align: 'right', render: m => fmtMXNCorto(m[2] as number) },
+                ]}
+                filas={(() => {
+                  const filasMonitoreo = getMonitoreo();
+                  const grupos = new Map<string, typeof filasMonitoreo>();
+                  filasMonitoreo.forEach(f => grupos.set(f.medio, [...(grupos.get(f.medio) ?? []), f]));
+                  return [...grupos.entries()].map(([medio, fs]) => {
+                    const cprps = fs.map(cprpReal).filter((x): x is number => x !== null && x > 0);
+                    return [medio, fs.reduce((s, f) => s + cumplimientoPct(f), 0) / fs.length, cprps.reduce((s, v) => s + v, 0) / (cprps.length || 1)] as [string, number, number];
+                  }).sort((a, b) => a[2] - b[2]);
+                })()}
               />
             </Panel>
           </>
@@ -79,7 +101,7 @@ export const EjecutivaVista: React.FC<Props> = ({ subId, onNavigate }) => {
         )}
 
         {subId === 'aprobaciones-pendientes' && (
-          <Panel title="Aprobaciones pendientes" right={
+          <Panel title="Aprobaciones pendientes — de mayor a menor monto" right={
             <button onClick={() => onNavigate('aprobaciones:pendientes')}
               style={{ border: 'none', background: colores.primario, color: '#fff', fontWeight: 700, fontSize: 12.5, padding: '7px 14px', borderRadius: 10, cursor: 'pointer' }}>
               Ir al Centro de Aprobaciones
@@ -92,9 +114,10 @@ export const EjecutivaVista: React.FC<Props> = ({ subId, onNavigate }) => {
                 { header: 'Motivo', render: v => v.motivo },
                 { header: 'Autor', render: v => v.autor },
                 { header: 'Fecha', render: v => v.fecha },
-                { header: 'Factor', align: 'right', render: v => `${v.factor_presupuesto}x` },
+                { header: 'Monto', align: 'right', render: v => `${(v.delta_inversion ?? 0) >= 0 ? '+' : ''}${fmtMXNCorto(v.delta_inversion ?? 0)}` },
               ]}
-              filas={listaVersiones(overrides).filter(v => v.estado === 'pendiente')}
+              filas={listaVersiones(overrides).filter(v => v.estado === 'pendiente')
+                .sort((a, b) => Math.abs(b.delta_inversion ?? 0) - Math.abs(a.delta_inversion ?? 0))}
             />
           </Panel>
         )}

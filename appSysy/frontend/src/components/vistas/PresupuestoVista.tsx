@@ -1,15 +1,41 @@
 import React from 'react';
+import { AlertTriangle } from 'lucide-react';
+import { brandingConfig } from '../../config/branding';
 import { fmtMXNCorto } from '../../data/media';
-import { mock, listaCampanasFlow, getFilaFlow, useOverrides } from '../../data/store';
-import { Panel, Kpi, OrigenTag, wrap, inner, useIsMobile } from '../shared/ui';
+import { mock, listaCampanasFlow, getFilaFlow, getMonitoreo, useOverrides } from '../../data/store';
+import { cumplimientoPct, cprpPlan, cprpReal, dineroEnRiesgo } from '../../data/metricas';
+import { Panel, OrigenTag, wrap, inner, useIsMobile } from '../shared/ui';
 import { Tabla, VistaHeader, DonaChart, BarritasChart } from './_shared';
 
 interface Props { subId: string; onNavigate: (target: string) => void }
 
+/** Tarjeta con barra de progreso — autorizado/comprometido/ejecutado, con rojo solo si se excede. */
+const TarjetaProgreso: React.FC<{ label: string; valor: number; total: number; color: string; sub?: string; alerta?: boolean }> =
+({ label, valor, total, color, sub, alerta }) => {
+  const { colores } = brandingConfig;
+  const pct = total ? Math.min(100, (valor / total) * 100) : 0;
+  return (
+    <div style={{ background: colores.fondoClaro, border: `1px solid ${alerta ? colores.peligro : colores.borde}`, borderRadius: 14, padding: 16 }}>
+      <div style={{ fontSize: 12, color: colores.textoOscuro, fontWeight: 600, marginBottom: 6 }}>{label}</div>
+      <div style={{ fontSize: 22, fontWeight: 800, color: alerta ? colores.peligro : colores.textoClaro }}>{fmtMXNCorto(valor)}</div>
+      <div style={{ height: 6, borderRadius: 999, background: colores.fondoTerciario, marginTop: 10, overflow: 'hidden' }}>
+        <div style={{ height: '100%', width: `${pct}%`, background: alerta ? colores.peligro : color, transition: 'width .4s' }} />
+      </div>
+      {sub && <div style={{ fontSize: 11, color: colores.textoOscuro, marginTop: 6 }}>{sub}</div>}
+    </div>
+  );
+};
+
 export const PresupuestoVista: React.FC<Props> = ({ subId }) => {
+  const { colores } = brandingConfig;
   const isMobile = useIsMobile();
   const overrides = useOverrides();
   const campanas = listaCampanasFlow();
+  const autorizado = mock.marcas.reduce((s, m) => s + m.presupuesto, 0);
+  const comprometido = mock.simulado.presupuesto.reduce((s, p) => s + p.comprometido, 0);
+  const ejecutado = mock.simulado.presupuesto.reduce((s, p) => s + p.ejecutado, 0);
+  const enRiesgo = dineroEnRiesgo(getMonitoreo());
+  const excedido = ejecutado > autorizado;
 
   return (
     <div style={wrap(isMobile)}>
@@ -18,11 +44,47 @@ export const PresupuestoVista: React.FC<Props> = ({ subId }) => {
 
         {subId === 'resumen' && (
           <>
-            <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr 1fr' : 'repeat(3, 1fr)', gap: 14, marginBottom: 18 }}>
-              <Kpi label="Autorizado" value={fmtMXNCorto(mock.marcas.reduce((s, m) => s + m.presupuesto, 0))} sub="real" />
-              <Kpi label="Comprometido" value={fmtMXNCorto(mock.simulado.presupuesto.reduce((s, p) => s + p.comprometido, 0))} sub="simulado" />
-              <Kpi label="Ejecutado" value={fmtMXNCorto(mock.simulado.presupuesto.reduce((s, p) => s + p.ejecutado, 0))} sub="simulado" />
+            {(excedido || enRiesgo > 0) && (
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '12px 16px', borderRadius: 12, background: `${colores.peligro}0F`, border: `1px solid ${colores.peligro}40`, marginBottom: 16 }}>
+                <AlertTriangle size={18} color={colores.peligro} />
+                <span style={{ fontSize: 13, color: colores.textoClaro }}>
+                  {excedido && <>Lo ejecutado excede lo autorizado. </>}
+                  {enRiesgo > 0 && <>{fmtMXNCorto(enRiesgo)} en riesgo por spots no transmitidos o fuera de horario.</>}
+                </span>
+              </div>
+            )}
+            <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr 1fr' : 'repeat(4, 1fr)', gap: 14, marginBottom: 18 }}>
+              <TarjetaProgreso label="Autorizado" valor={autorizado} total={autorizado} color="#0EA5E9" sub="real" />
+              <TarjetaProgreso label="Comprometido" valor={comprometido} total={autorizado} color="#F59E0B" sub="simulado" />
+              <TarjetaProgreso label="Ejecutado" valor={ejecutado} total={autorizado} color={colores.exito} sub="simulado" alerta={excedido} />
+              <TarjetaProgreso label="En riesgo" valor={enRiesgo} total={autorizado} color={colores.peligro} sub="simulado (testigo)" alerta={enRiesgo > 0} />
             </div>
+            <Panel title="Cumplimiento y CPRP por medio (monitoreo)" style={{ marginBottom: 18 }}>
+              <Tabla
+                keyOf={m => m[0]}
+                columnas={[
+                  { header: 'Medio', render: m => <span style={{ fontWeight: 600 }}>{m[0]}</span> },
+                  { header: 'Cumplimiento', align: 'right', render: m => `${(m[1] as number).toFixed(0)}%` },
+                  { header: 'CPRP plan', align: 'right', render: m => fmtMXNCorto(m[2] as number) },
+                  { header: 'CPRP real', align: 'right', render: m => (m[3] as number) > 0 ? fmtMXNCorto(m[3] as number) : '—' },
+                ]}
+                filas={Object.entries(
+                  getMonitoreo().reduce<Record<string, { cump: number[]; plan: number[]; real: number[] }>>((acc, f) => {
+                    const g = acc[f.medio] ?? { cump: [], plan: [], real: [] };
+                    g.cump.push(cumplimientoPct(f));
+                    const p = cprpPlan(f); if (p !== null) g.plan.push(p);
+                    const r = cprpReal(f); if (r !== null) g.real.push(r);
+                    acc[f.medio] = g;
+                    return acc;
+                  }, {}),
+                ).map(([medio, g]) => [
+                  medio,
+                  g.cump.reduce((s, v) => s + v, 0) / g.cump.length,
+                  g.plan.reduce((s, v) => s + v, 0) / (g.plan.length || 1),
+                  g.real.reduce((s, v) => s + v, 0) / (g.real.length || 1),
+                ] as [string, number, number, number])}
+              />
+            </Panel>
             <Panel title="Por marca">
               <BarritasChart
                 datos={mock.marcas.map(m => ({

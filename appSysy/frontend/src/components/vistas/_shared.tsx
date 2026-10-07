@@ -8,12 +8,13 @@ import {
 } from 'recharts';
 import { brandingConfig } from '../../config/branding';
 import { vistaActiva } from '../../config/menu';
+import { AyudaMayia } from '../shared/AyudaMayia';
 
 // Paleta determinista (mismo dato → mismo color siempre) para pies y barras
 // de varias series — el color no depende del orden en que lleguen los datos.
 export const colorSerie = (indice: number) => `hsl(${(indice * 47) % 360} 65% 45%)`;
 
-export const VistaHeader: React.FC<{ vistaId: string; subId: string }> = ({ vistaId, subId }) => {
+export const VistaHeader: React.FC<{ vistaId: string; subId: string; flowCampanaId?: string }> = ({ vistaId, subId, flowCampanaId }) => {
   const { colores } = brandingConfig;
   const vista = vistaActiva(vistaId);
   const sub = vista.subsecciones.find(s => s.id === subId) ?? vista.subsecciones[0];
@@ -24,6 +25,7 @@ export const VistaHeader: React.FC<{ vistaId: string; subId: string }> = ({ vist
     }}>
       <div style={{ position: 'absolute', top: -60, right: -40, width: 220, height: 220, borderRadius: '50%',
                     background: `radial-gradient(circle, ${colores.primario}55, transparent 70%)` }} />
+      <AyudaMayia vistaId={vistaId} subId={subId} flowCampanaId={flowCampanaId} />
       <div style={{ position: 'relative' }}>
         <span style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', color: colores.primario }}>
           {vista.nombre}

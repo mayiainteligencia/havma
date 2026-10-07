@@ -130,9 +130,18 @@ export interface Version {
   etiqueta: string;
   motivo: string;
   autor: string;
+  rol?: Rol;
   fecha: string;
+  /** Hora exacta "HH:MM", aparte de `fecha` para que la línea de tiempo la muestre sin reparsear. */
+  hora?: string;
   estado: EstadoVersion;
+  /** Comentario al aprobar/rechazar (Centro de Aprobaciones). */
+  comentarioResolucion?: string;
   factor_presupuesto: number;
+  /** $ que cambia esta versión vs. la base — lo que pinta verde/gris en la línea de tiempo. */
+  delta_inversion?: number;
+  /** Si viene de "restaurar" otra versión, el id de esa versión. */
+  restaurada_de?: string;
   /** Congelado al momento de guardar — la versión no se mueve aunque el ejercicio se siga editando después. */
   snapshot_touchpoints?: { nombre: string; inversion: number }[];
   snapshot_semanas?: Record<string, number[]>; // medio -> valores por semana (versiones de Flowchart)
@@ -142,6 +151,15 @@ export interface Version {
     por_touchpoint: EscenarioTouchpoint[];
     totales: { grps: number; impactos_miles: number; alcance: number };
   } | null;
+}
+
+/** Una línea de la bitácora de actividad — "Ana (Planner) subió TV Abierta +$2M, 14:32". */
+export interface BitacoraEntry {
+  id: string;
+  fecha: string;   // ISO datetime completo
+  autor: string;
+  rol: Rol;
+  mensaje: string;
 }
 
 export interface Desviacion { campana: string; categoria: string | null; origen: Origen; planeado: number; real: number; delta_pct: number }
@@ -173,3 +191,10 @@ export const VISTAS_POR_ROL: Record<Rol, string[]> = {
   cliente: ['cliente', 'flowchart', 'aprobaciones', 'resultados'],
 };
 export const NOMBRE_ROL: Record<Rol, string> = { ceo: 'CEO', planner: 'Planner', cliente: 'Cliente' };
+
+// Identidad simulada para la bitácora y las versiones — no hay login real,
+// pero cada rol firma sus cambios con un nombre reconocible ("Ana (Planner)").
+export const ACTOR_POR_ROL: Record<Rol, string> = {
+  ceo: 'Luis (CEO)', planner: 'Ana (Planner)', cliente: 'Equipo Cliente',
+};
+export const INICIALES_POR_ROL: Record<Rol, string> = { ceo: 'LU', planner: 'AN', cliente: 'EQ' };

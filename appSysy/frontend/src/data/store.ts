@@ -6,10 +6,13 @@
 import { useSyncExternalStore } from 'react';
 import mockRaw from './mock.json';
 import type {
-  MockData, Ejercicio, FlowCampana, Version, EstadoVersion, Rol,
+  MockData, Ejercicio, FlowCampana, Version, EstadoVersion, Rol, BitacoraEntry,
 } from './types';
+import { ACTOR_POR_ROL } from './types';
 import { distribuirSemanas } from './distribuirSemanas';
 import { interpolarEscenario } from './interpolate';
+import { MONITOREO, type FilaMonitoreo } from './seed_monitoreo';
+import { fmtMXNCorto } from './media';
 
 const mock = mockRaw as unknown as MockData;
 export { mock };
@@ -25,8 +28,9 @@ interface OverridesState {
   ejerciciosImportados: Ejercicio[];
   flowOverrides: Record<string, FlowCellOverride>;
   versionesExtra: Version[];
-  versionEstados: Record<string, EstadoVersion>;
+  versionEstados: Record<string, { estado: EstadoVersion; comentario?: string }>;
   rol: Rol;
+  bitacora: BitacoraEntry[];
 }
 
 const ESTADO_INICIAL: OverridesState = {
@@ -37,6 +41,7 @@ const ESTADO_INICIAL: OverridesState = {
   versionesExtra: [],
   versionEstados: {},
   rol: 'ceo',
+  bitacora: [],
 };
 
 function cargar(): OverridesState {
@@ -81,6 +86,30 @@ export function resetearDatos() {
   try { localStorage.removeItem(STORAGE_KEY); } catch { /* noop */ }
   estado = ESTADO_INICIAL;
   notificar();
+}
+
+const horaActual = () => new Date().toTimeString().slice(0, 5);
+
+/** Escribe una línea en la bitácora de actividad, firmada por el rol activo. */
+function registrar(mensaje: string) {
+  const entry: BitacoraEntry = {
+    id: `bit-${Date.now()}-${Math.round(Math.random() * 1e4)}`,
+    fecha: new Date().toISOString(),
+    autor: ACTOR_POR_ROL[estado.rol],
+    rol: estado.rol,
+    mensaje,
+  };
+  // la propia llamada hace `set` después (quien la invoque decide cuándo notificar);
+  // aquí solo se acumula para que quede en el mismo patch que el cambio real.
+  estado = { ...estado, bitacora: [entry, ...estado.bitacora].slice(0, 200) };
+}
+
+export function getBitacora(o: OverridesState, limite = 50): BitacoraEntry[] {
+  return o.bitacora.slice(0, limite);
+}
+
+export function getMonitoreo(): FilaMonitoreo[] {
+  return MONITOREO;
 }
 
 // ── Ejercicios (Smart Planner / Spectrum) ──
@@ -131,6 +160,14 @@ export function updateTouchpointInversion(id: string, nombre: string, inversion:
   });
 }
 
+/** Una línea en la bitácora por edición terminada (no por cada tecleo) — se llama al salir del campo. */
+export function registrarCambioInversion(nombre: string, anterior: number, nuevo: number) {
+  if (anterior === nuevo) return;
+  const delta = nuevo - anterior;
+  registrar(`${ACTOR_POR_ROL[estado.rol]} ${delta > 0 ? 'subió' : 'bajó'} ${nombre} ${delta > 0 ? '+' : ''}${fmtMXNCorto(delta)}, ${horaActual()}`);
+  set({});
+}
+
 /** Semáforo de cuadre del mix contra el presupuesto del brief — rojo solo se usa aquí. */
 export function semaforoCuadre(ej: Ejercicio): { ok: boolean; pct: number } {
   const presupuesto = ej.exercise.presupuesto ?? 0;
@@ -141,6 +178,7 @@ export function semaforoCuadre(ej: Ejercicio): { ok: boolean; pct: number } {
 }
 
 export function importarEjercicio(ejercicio: Ejercicio) {
+  registrar(`${ACTOR_POR_ROL[estado.rol]} importó "${ejercicio.fuente_archivo}", ${horaActual()}`);
   set({
     ejerciciosImportados: [...estado.ejerciciosImportados, ejercicio],
     ejercicioActivoId: ejercicio.id,
@@ -180,19 +218,32 @@ export function setCeldaFlow(campanaId: string, medio: string, semanaIdx: number
 export function confirmarFilaFlow(campanaId: string, medio: string) {
   const key = flowKey(campanaId, medio);
   const prev = estado.flowOverrides[key] ?? {};
+  registrar(`${ACTOR_POR_ROL[estado.rol]} confirmó el reparto de ${medio}, ${horaActual()}`);
   set({ flowOverrides: { ...estado.flowOverrides, [key]: { ...prev, confirmado: true } } });
+}
+
+/** Una línea en la bitácora por edición de celda terminada (no por cada tecleo). */
+export function registrarCambioFlow(medio: string, anterior: number, nuevo: number) {
+  if (anterior === nuevo) return;
+  const delta = nuevo - anterior;
+  registrar(`${ACTOR_POR_ROL[estado.rol]} ${delta > 0 ? 'subió' : 'bajó'} una semana de ${medio} ${delta > 0 ? '+' : ''}${fmtMXNCorto(delta)}, ${horaActual()}`);
+  set({});
 }
 
 // ── Versiones / Centro de Aprobaciones ──
 
 export function listaVersiones(o: OverridesState): Version[] {
-  return [...mock.versiones, ...o.versionesExtra].map(v => ({ ...v, estado: o.versionEstados[v.id] ?? v.estado }));
+  return [...mock.versiones, ...o.versionesExtra].map(v => {
+    const ov = o.versionEstados[v.id];
+    return ov ? { ...v, estado: ov.estado, comentarioResolucion: ov.comentario ?? v.comentarioResolucion } : v;
+  });
 }
 
 /** Congela el mix actual (con overrides ya aplicados) — la versión no se mueve si el ejercicio se sigue editando después. */
 export function crearVersionEjercicio(input: { ejercicioBaseId: string; etiqueta: string; motivo: string; autor: string; factorPresupuesto: number }): Version {
   const base = getEjercicio(estado, input.ejercicioBaseId);
   const interpolado = input.factorPresupuesto === 1 ? null : interpolarEscenario(base.escenarios, input.factorPresupuesto);
+  const deltaInversion = (interpolado ? interpolado.presupuesto_total : base.totales.inversion ?? 0) - (base.exercise.presupuesto ?? 0);
   const version: Version = {
     id: `v-${Date.now()}`,
     origen: interpolado ? 'simulado' : base.origen,
@@ -200,12 +251,16 @@ export function crearVersionEjercicio(input: { ejercicioBaseId: string; etiqueta
     etiqueta: input.etiqueta,
     motivo: input.motivo,
     autor: input.autor,
+    rol: estado.rol,
     fecha: new Date().toISOString().slice(0, 10),
+    hora: horaActual(),
     estado: 'pendiente',
     factor_presupuesto: input.factorPresupuesto,
+    delta_inversion: deltaInversion,
     snapshot_touchpoints: base.touchpoints.map(t => ({ nombre: t.nombre, inversion: t.inversion ?? 0 })),
     interpolado,
   };
+  registrar(`${ACTOR_POR_ROL[estado.rol]} guardó la versión "${input.etiqueta}" (${deltaInversion >= 0 ? '+' : ''}${fmtMXNCorto(deltaInversion)}), ${horaActual()}`);
   set({ versionesExtra: [...estado.versionesExtra, version] });
   return version;
 }
@@ -215,6 +270,8 @@ export function crearVersionFlow(input: { campanaId: string; etiqueta: string; m
   const campana = mock.flow.campanas.find(c => c.id === input.campanaId)!;
   const snapshot_semanas: Record<string, number[]> = {};
   for (const m of campana.medios) snapshot_semanas[m.medio] = getFilaFlow(estado, input.campanaId, m.medio).valores;
+  const totalSnapshot = Object.values(snapshot_semanas).flat().reduce((s, v) => s + v, 0);
+  const totalBase = campana.medios.reduce((s, m) => s + m.inversion_total, 0);
   const version: Version = {
     id: `v-${Date.now()}`,
     origen: 'real',
@@ -223,18 +280,45 @@ export function crearVersionFlow(input: { campanaId: string; etiqueta: string; m
     etiqueta: input.etiqueta,
     motivo: input.motivo,
     autor: input.autor,
+    rol: estado.rol,
     fecha: new Date().toISOString().slice(0, 10),
+    hora: horaActual(),
     estado: 'pendiente',
     factor_presupuesto: 1,
+    delta_inversion: totalSnapshot - totalBase,
     snapshot_semanas,
     interpolado: null,
   };
+  registrar(`${ACTOR_POR_ROL[estado.rol]} guardó la versión "${input.etiqueta}" del Flowchart, ${horaActual()}`);
   set({ versionesExtra: [...estado.versionesExtra, version] });
   return version;
 }
 
-export function setEstadoVersion(id: string, nuevoEstado: EstadoVersion) {
-  set({ versionEstados: { ...estado.versionEstados, [id]: nuevoEstado } });
+export function setEstadoVersion(id: string, nuevoEstado: EstadoVersion, comentario?: string) {
+  const v = listaVersiones(estado).find(x => x.id === id);
+  registrar(`${ACTOR_POR_ROL[estado.rol]} ${nuevoEstado === 'aprobada' ? 'aprobó' : 'rechazó'} "${v?.etiqueta ?? id}"${comentario ? ` — "${comentario}"` : ''}, ${horaActual()}`);
+  set({ versionEstados: { ...estado.versionEstados, [id]: { estado: nuevoEstado, comentario } } });
+}
+
+/** "Restaurar esta versión": crea una versión NUEVA con el mismo contenido — nunca borra ni pisa la anterior. */
+export function restaurarVersion(id: string): Version {
+  const v = listaVersiones(estado).find(x => x.id === id)!;
+  const version: Version = {
+    ...v,
+    id: `v-${Date.now()}`,
+    etiqueta: `${v.etiqueta} (restaurada)`,
+    motivo: `Restaurada desde "${v.etiqueta}"`,
+    autor: ACTOR_POR_ROL[estado.rol],
+    rol: estado.rol,
+    fecha: new Date().toISOString().slice(0, 10),
+    hora: horaActual(),
+    estado: 'pendiente',
+    comentarioResolucion: undefined,
+    restaurada_de: v.id,
+  };
+  registrar(`${ACTOR_POR_ROL[estado.rol]} restauró la versión "${v.etiqueta}", ${horaActual()}`);
+  set({ versionesExtra: [...estado.versionesExtra, version] });
+  return version;
 }
 
 // ── Rol (filtra el menú; sin permisos reales de verdad) ──
