@@ -12,6 +12,7 @@ import {
   UserCog,
   Upload,
   RotateCcw,
+  HelpCircle,
 } from 'lucide-react';
 import { brandingConfig } from '../config/branding';
 import type { Vista } from '../config/menu';
@@ -21,6 +22,7 @@ import { NOMBRE_ROL, type Rol } from '../data/types';
 import { resetearDatos, setRol } from '../data/store';
 import { BrainCanvas } from './modules/dashboardModules/BrainCanvas';
 import { ImportarExcelModal } from './ImportarExcelModal';
+import { InstruccionesModal } from './InstruccionesModal';
 import { useConfirm } from './shared/confirm';
 import { useToast } from './shared/toast';
 
@@ -93,6 +95,7 @@ export const Header: React.FC<HeaderProps> = ({ activeVista, onNavigate, vistasV
   const [rolMenuAbierto, setRolMenuAbierto] = useState(false);
   const rolMenuRef = useRef<HTMLDivElement>(null);
   const [modalExcelAbierto, setModalExcelAbierto] = useState(false);
+  const [modalInstruccionesAbierto, setModalInstruccionesAbierto] = useState(false);
 
   useEffect(() => {
     const handler = (e: MouseEvent) => {
@@ -351,6 +354,16 @@ export const Header: React.FC<HeaderProps> = ({ activeVista, onNavigate, vistasV
               </div>
             )}
           </div>
+
+          {/* Instrucciones — qué hace cada rol y cada sección suya */}
+          <button onClick={() => setModalInstruccionesAbierto(true)} title="Instrucciones" aria-label="Instrucciones"
+            style={iconBtnStyle(colores.fondoTerciario)}
+            onMouseEnter={e => (e.currentTarget.style.backgroundColor = colores.fondoPrincipal)}
+            onMouseLeave={e => (e.currentTarget.style.backgroundColor = colores.fondoTerciario)}
+          >
+            <HelpCircle size={18} style={{ color: colores.textoClaro }} />
+          </button>
+          {modalInstruccionesAbierto && <InstruccionesModal onClose={() => setModalInstruccionesAbierto(false)} />}
 
           {/* Cargar Excel — global, con arrastrar y soltar dentro del modal */}
           <button onClick={() => setModalExcelAbierto(true)} title="Cargar Excel" aria-label="Cargar Excel"
