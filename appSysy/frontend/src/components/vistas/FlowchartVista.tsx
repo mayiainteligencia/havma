@@ -7,6 +7,7 @@ import { indiceFallasPorSemana, fallaTestigoCelda } from '../../data/metricas';
 import { ACTOR_POR_ROL } from '../../data/types';
 import { Panel, OrigenTag, wrap, inner, useIsMobile } from '../shared/ui';
 import { Tabla, VistaHeader, DonaChart, BarritasChart } from './_shared';
+import { descargarFlowEditado } from '../../data/exportarFlow';
 import { GuardarVersionModal } from './GuardarVersionModal';
 import { InsightsCard } from './InsightsCard';
 
@@ -93,6 +94,10 @@ export const FlowchartVista: React.FC<Props> = ({ subId }) => {
                 <span style={{ display: 'flex', alignItems: 'center', gap: 5, fontSize: 11, color: colores.textoMedio }}>
                   <AlertTriangle size={12} color={colores.peligro} /> falla de testigo
                 </span>
+                <button onClick={() => descargarFlowEditado(overrides)}
+                  style={{ border: `1px solid ${colores.primario}`, background: 'transparent', color: colores.primario, fontWeight: 700, fontSize: 12.5, padding: '7px 14px', borderRadius: 10, cursor: 'pointer' }}>
+                  Descargar Flow
+                </button>
                 <button onClick={() => setModalVersionAbierto(true)}
                   style={{ border: 'none', background: colores.primario, color: '#fff', fontWeight: 700, fontSize: 12.5, padding: '7px 14px', borderRadius: 10, cursor: 'pointer' }}>
                   Guardar como versión

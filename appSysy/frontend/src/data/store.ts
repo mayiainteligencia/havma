@@ -22,7 +22,7 @@ const STORAGE_KEY = 'havasdata:overrides';
 interface FlowCellOverride { celdas?: Record<number, number>; confirmado?: boolean }
 interface EjercicioOverride { exercise?: Partial<Ejercicio['exercise']>; touchpointInversion?: Record<string, number> }
 
-interface OverridesState {
+export interface OverridesState {
   ejercicioActivoId: string;
   ejercicioOverrides: Record<string, EjercicioOverride>;
   ejerciciosImportados: Ejercicio[];
