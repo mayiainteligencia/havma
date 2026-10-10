@@ -13,9 +13,12 @@ import {
   Upload,
   RotateCcw,
   HelpCircle,
+  Sun,
+  Moon,
 } from 'lucide-react';
 import { brandingConfig } from '../config/branding';
 import type { Vista } from '../config/menu';
+import { ROLES_ACTIVOS } from '../config/roles';
 import { buscarSeccion } from '../data/asistente';
 import { porPeriodo, ULTIMO, CLIENTE, fmt, fmtMXNCorto, ALERTAS } from '../data/media';
 import { NOMBRE_ROL, type Rol } from '../data/types';
@@ -96,6 +99,17 @@ export const Header: React.FC<HeaderProps> = ({ activeVista, onNavigate, vistasV
   const rolMenuRef = useRef<HTMLDivElement>(null);
   const [modalExcelAbierto, setModalExcelAbierto] = useState(false);
   const [modalInstruccionesAbierto, setModalInstruccionesAbierto] = useState(false);
+
+  const [theme, setTheme] = useState<'light'|'dark'>(() => {
+    return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+  });
+
+  const toggleTheme = () => {
+    const next = theme === 'light' ? 'dark' : 'light';
+    setTheme(next);
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  };
 
   useEffect(() => {
     const handler = (e: MouseEvent) => {
@@ -338,7 +352,7 @@ export const Header: React.FC<HeaderProps> = ({ activeVista, onNavigate, vistasV
                 background: colores.fondoPrincipal, border: `1px solid ${colores.borde}`, borderRadius: '12px',
                 boxShadow: '0 20px 60px rgba(0,0,0,0.25)', overflow: 'hidden', zIndex: 320, padding: '5px',
               }}>
-                {(Object.keys(NOMBRE_ROL) as Rol[]).map(r => (
+                {(Object.keys(NOMBRE_ROL) as Rol[]).filter(r => ROLES_ACTIVOS.includes(r)).map(r => (
                   <button key={r} onClick={() => { setRol(r); setRolMenuAbierto(false); }}
                     style={{
                       width: '100%', textAlign: 'left', padding: '8px 10px', border: 'none', borderRadius: '8px',
@@ -354,6 +368,15 @@ export const Header: React.FC<HeaderProps> = ({ activeVista, onNavigate, vistasV
               </div>
             )}
           </div>
+
+          {/* Tema claro/oscuro */}
+          <button onClick={toggleTheme} title="Cambiar tema" aria-label="Cambiar tema"
+            style={iconBtnStyle(colores.fondoTerciario)}
+            onMouseEnter={e => (e.currentTarget.style.backgroundColor = colores.fondoPrincipal)}
+            onMouseLeave={e => (e.currentTarget.style.backgroundColor = colores.fondoTerciario)}
+          >
+            {theme === 'dark' ? <Sun size={18} style={{ color: colores.textoClaro }} /> : <Moon size={18} style={{ color: colores.textoClaro }} />}
+          </button>
 
           {/* Instrucciones — qué hace cada rol y cada sección suya */}
           <button onClick={() => setModalInstruccionesAbierto(true)} title="Instrucciones" aria-label="Instrucciones"

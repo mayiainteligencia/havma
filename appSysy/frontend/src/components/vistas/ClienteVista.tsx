@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { brandingConfig } from '../../config/branding';
 import { fmtMXNCorto } from '../../data/media';
 import { mock, getEjercicio, listaVersiones, setEstadoVersion, useOverrides } from '../../data/store';
-import { interpolarEscenario, touchpointQueMasPierdeAlcance } from '../../data/interpolate';
+import { interpolarEscenario, touchpointQueMasPierdeAlcance } from '../../domain/interpolate';
 import { Panel, Kpi, OrigenTag, Semaforo, wrap, inner, useIsMobile } from '../shared/ui';
 import { VistaHeader, Tabla, DonaChart } from './_shared';
 import { InsightsCard } from './InsightsCard';

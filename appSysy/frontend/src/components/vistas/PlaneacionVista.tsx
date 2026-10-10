@@ -7,11 +7,13 @@ import {
   listaEjercicios, getEjercicioActivo, setEjercicioActivo, getBitacora,
   updateBriefField, updateTouchpointInversion, registrarCambioInversion, semaforoCuadre, crearVersionEjercicio, useOverrides,
 } from '../../data/store';
-import { interpolarEscenario } from '../../data/interpolate';
+import { interpolarEscenario } from '../../domain/interpolate';
 import { ACTOR_POR_ROL } from '../../data/types';
 import { Panel, OrigenTag, Semaforo, wrap, inner, useIsMobile } from '../shared/ui';
 import { NumeroAnimado } from '../shared/NumeroAnimado';
 import { Tabla, VistaHeader, DonaChart } from './_shared';
+import { WidgetRenderer } from '../../config/registry';
+import layoutPlaneacion from '../../config/layoutPlaneacion.json';
 import { GuardarVersionModal } from './GuardarVersionModal';
 import { InsightsCard } from './InsightsCard';
 import { BitacoraPanel } from './BitacoraPanel';
@@ -56,6 +58,19 @@ export const PlaneacionVista: React.FC<Props> = ({ subId }) => {
     <div style={wrap(isMobile)}>
       <div style={inner}>
         <VistaHeader vistaId="planeacion" subId={subId} />
+        {import.meta.env.DEV && (
+          <div style={{ marginBottom: 24, padding: 16, border: '1px dashed var(--color-primary)', borderRadius: 'var(--radius-lg)' }}>
+            <h4 style={{ margin: '0 0 16px 0', fontSize: 12, color: 'var(--color-primary)', textTransform: 'uppercase' }}>Prueba Layout JSON (Fase A)</h4>
+            <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: 16 }}>
+              {layoutPlaneacion.layout.map((def: any) => (
+                <WidgetRenderer key={def.id} def={def} dataMap={{
+                  'bars-mix': ejercicio.touchpoints.map(t => ({ id: t.nombre, label: t.nombre, value: t.inversion ?? 0 })),
+                  'gauge-alcance': (ejercicio.totales.alcance ?? 0) * 100
+                }} />
+              ))}
+            </div>
+          </div>
+        )}
         <InsightsCard rol="planner" />
 
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 18, alignItems: 'center' }}>

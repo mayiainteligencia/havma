@@ -9,8 +9,8 @@ import type {
   MockData, Ejercicio, FlowCampana, Version, EstadoVersion, Rol, BitacoraEntry,
 } from './types';
 import { ACTOR_POR_ROL } from './types';
-import { distribuirSemanas } from './distribuirSemanas';
-import { interpolarEscenario } from './interpolate';
+import { distribuirSemanas } from '../domain/distribuirSemanas';
+import { interpolarEscenario } from '../domain/interpolate';
 import { MONITOREO, type FilaMonitoreo } from './seed_monitoreo';
 import { fmtMXNCorto } from './media';
 
@@ -44,11 +44,17 @@ const ESTADO_INICIAL: OverridesState = {
   bitacora: [],
 };
 
+import { ROLES_ACTIVOS } from '../config/roles';
+
 function cargar(): OverridesState {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return ESTADO_INICIAL;
-    return { ...ESTADO_INICIAL, ...JSON.parse(raw) };
+    const data = { ...ESTADO_INICIAL, ...JSON.parse(raw) };
+    if (!ROLES_ACTIVOS.includes(data.rol)) {
+      data.rol = 'planner';
+    }
+    return data;
   } catch {
     return ESTADO_INICIAL; // localStorage bloqueado o dato corrupto: arranca limpio
   }

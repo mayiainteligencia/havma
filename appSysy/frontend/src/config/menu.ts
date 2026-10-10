@@ -208,6 +208,15 @@ export const vistas: Vista[] = [
   },
 ];
 
+// Solo agregamos la galería en desarrollo
+if (import.meta.env.DEV) {
+  vistas.push({
+    id: 'widgets', nombre: 'Galería de Widgets', nombreCorto: 'Widgets', icono: Layers,
+    descripcion: 'Galería de componentes base.',
+    subsecciones: [{ id: 'all', nombre: 'Todos', icono: Layers, descripcion: 'Todos los widgets' }]
+  });
+}
+
 export const vistaActiva = (id: string): Vista => vistas.find(v => v.id === id) ?? vistas[0];
 
 /** true si `id` es una vista válida del menú actual. */

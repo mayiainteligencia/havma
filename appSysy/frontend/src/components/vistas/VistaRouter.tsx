@@ -6,11 +6,13 @@ import { FlowchartVista } from './FlowchartVista';
 import { AprobacionesVista } from './AprobacionesVista';
 import { PresupuestoVista } from './PresupuestoVista';
 import { ResultadosVista } from './ResultadosVista';
+import { GalleryVista } from './GalleryVista';
 
 interface Props { vistaId: string; subId: string; onNavigate: (target: string) => void }
 
 /** Despacha a la vista real por id — reemplaza al VistaPlaceholder de la Fase 1. */
 export const VistaRouter: React.FC<Props> = ({ vistaId, subId, onNavigate }) => {
+  if (import.meta.env.DEV && vistaId === 'widgets') return <GalleryVista />;
   switch (vistaId) {
     case 'ejecutiva': return <EjecutivaVista subId={subId} onNavigate={onNavigate} />;
     case 'cliente': return <ClienteVista subId={subId} onNavigate={onNavigate} />;

@@ -4,9 +4,9 @@
 // Escenarios) o, cuando no hay una curva precomputada para ese reparto
 // (reasignación entre medios, "otro plan" en texto libre), con una
 // aproximación proporcional simple — se marca `estimado: true` donde aplica.
-import type { Ejercicio, Touchpoint } from './types';
+import type { Ejercicio, Touchpoint } from '../data/types';
 import { interpolarEscenario, type Interpolado } from './interpolate';
-import { fmtMXNCorto } from './media';
+import { fmtMXNCorto } from '../data/media';
 
 export interface Asignacion { touchpoint: string; inversion: number }
 export interface EfectoPlan { deltaInversion: number; deltaGRPs: number; deltaAlcancePts: number; deltaCPRPpct: number; estimado: boolean }

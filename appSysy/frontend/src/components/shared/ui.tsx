@@ -4,6 +4,10 @@ import { brandingConfig } from '../../config/branding';
 import { useToast } from './toast';
 import { useConfirm } from './confirm';
 import type { Origen } from '../../data/types';
+import { Panel as WidgetPanel } from '../../ui/widgets/Panel';
+import { KpiCard } from '../../ui/widgets/KpiCard';
+import { Tag } from '../../ui/widgets/Tag';
+import { StatusBadge } from '../../ui/widgets/StatusBadge';
 
 const { colores } = brandingConfig;
 const V = colores.primario;
@@ -17,46 +21,21 @@ export const keyframes = `
 
 // ── Punto "LIVE" parpadeante ──
 export const LiveDot: React.FC<{ label?: string }> = ({ label = 'LIVE' }) => (
-  <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 11, fontWeight: 700, letterSpacing: '.05em', color: colores.exito }}>
-    <span className="el-pulse" style={{ width: 8, height: 8, borderRadius: '50%', background: colores.exito, animation: 'elPulse 1.4s ease-in-out infinite' }} />
-    {label}
-  </span>
+  <StatusBadge status="live" label={label} pulsing />
 );
 
 // ── Panel / tarjeta contenedora ──
 export const Panel: React.FC<{ title?: string; icon?: React.ReactNode; right?: React.ReactNode; children: React.ReactNode; style?: React.CSSProperties }> =
 ({ title, icon, right, children, style }) => (
-  <section style={{
-    background: colores.fondoClaro, border: `1px solid ${colores.borde}`, borderRadius: 18,
-    padding: 20, boxShadow: colores.sombra, animation: 'elFadeUp .4s ease both', ...style,
-  }} className="el-anim">
-    {(title || right) && (
-      <header style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 9 }}>
-          {icon}
-          {title && <h3 style={{ fontSize: 15, fontWeight: 700, color: colores.textoClaro, margin: 0 }}>{title}</h3>}
-        </div>
-        {right}
-      </header>
-    )}
+  <WidgetPanel title={title} icon={icon} right={right} style={style}>
     {children}
-  </section>
+  </WidgetPanel>
 );
 
 // ── KPI tile ──
 export const Kpi: React.FC<{ label: string; value: string; delta?: string; up?: boolean; sub?: string }> =
 ({ label, value, delta, up, sub }) => (
-  <div style={{ background: colores.fondoClaro, border: `1px solid ${colores.borde}`, borderRadius: 14, padding: 16, boxShadow: colores.sombra }}>
-    <div style={{ fontSize: 12, color: colores.textoOscuro, fontWeight: 600, marginBottom: 8 }}>{label}</div>
-    <div style={{ fontSize: 28, fontWeight: 800, color: colores.textoClaro, fontVariantNumeric: 'tabular-nums', lineHeight: 1 }}>{value}</div>
-    {(delta || sub) && (
-      <div style={{ display: 'flex', alignItems: 'center', gap: 5, marginTop: 8, fontSize: 12, color: up === false ? colores.peligro : colores.exito, fontWeight: 600 }}>
-        {up !== undefined && (up ? <ArrowUpRight size={14} /> : <ArrowDownRight size={14} />)}
-        <span style={{ color: delta ? undefined : colores.textoOscuro }}>{delta || sub}</span>
-        {delta && sub && <span style={{ color: colores.textoOscuro, fontWeight: 500 }}>· {sub}</span>}
-      </div>
-    )}
-  </div>
+  <KpiCard label={label} value={value} delta={delta} up={up} sub={sub} />
 );
 
 // ── Tarjeta de insight de MAYIA (Análisis / Predicción / Sugerencia) ──
@@ -129,36 +108,17 @@ export const SectionHero: React.FC<{ eyebrow: string; title: React.ReactNode; su
 );
 
 // ── Etiqueta de origen del dato: real (verde) / importado (azul) / simulado (gris) ──
-const ORIGEN_INFO: Record<Origen, { label: string; color: string }> = {
-  real: { label: 'real', color: colores.exito },
-  importado: { label: 'importado', color: '#3B82F6' },
-  simulado: { label: 'simulado', color: colores.textoOscuro },
-};
-
 export const OrigenTag: React.FC<{ origen: Origen; style?: React.CSSProperties }> = ({ origen, style }) => {
-  const { label, color } = ORIGEN_INFO[origen];
-  return (
-    <span style={{
-      display: 'inline-flex', alignItems: 'center', gap: 4, fontSize: 10, fontWeight: 700,
-      textTransform: 'uppercase', letterSpacing: '.04em', color, background: `${color}17`,
-      border: `1px solid ${color}40`, borderRadius: 999, padding: '2px 8px', lineHeight: 1.6, ...style,
-    }}>
-      <span style={{ width: 5, height: 5, borderRadius: '50%', background: color }} />
-      {label}
-    </span>
-  );
+  return <Tag variant={origen} style={style} />;
 };
 
 // ── Semáforo de cuadre: rojo solo se usa para esto (alertas de descuadre) ──
 export const Semaforo: React.FC<{ ok: boolean; textoOk?: string; textoError?: string }> =
 ({ ok, textoOk = 'cuadra', textoError = 'no cuadra' }) => (
-  <span style={{
-    display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 12, fontWeight: 700,
-    color: ok ? colores.exito : colores.peligro,
-  }}>
-    <span style={{ width: 8, height: 8, borderRadius: '50%', background: ok ? colores.exito : colores.peligro }} />
-    {ok ? textoOk : textoError}
-  </span>
+  <StatusBadge 
+    status={ok ? 'success' : 'error'} 
+    label={ok ? textoOk : textoError} 
+  />
 );
 
 export const wrap = (isMobile: boolean): React.CSSProperties => ({

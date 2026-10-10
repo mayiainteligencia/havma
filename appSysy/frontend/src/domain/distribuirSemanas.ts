@@ -8,7 +8,7 @@
 // ponytail: la confirmación se lleva por fila (campaña + medio), no celda por
 // celda — con 53 semanas por fila alcanza para lo que pide el MVP; si hace
 // falta granularidad de celda, `confirmado` pasa a ser `boolean[]`.
-import type { NivelesPresion } from './types';
+import type { NivelesPresion } from '../data/types';
 
 const NIVEL_KEY: Record<string, keyof NivelesPresion> = { LANZ: 'lanzamiento', MANT: 'mantenimiento', MIN: 'minimo' };
 
@@ -26,7 +26,7 @@ export function distribuirSemanas(
   const pesosEtapa = etapas.map(e => {
     const key = NIVEL_KEY[e];
     const v = key && niveles ? niveles[key] : null;
-    return v && v > 0 ? v : null;
+    return v !== null && v !== undefined ? v : null;
   });
   const sinPatron = etapas.length === 0 || pesosEtapa.some(p => p === null);
 

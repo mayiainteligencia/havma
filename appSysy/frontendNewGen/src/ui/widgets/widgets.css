@@ -1,0 +1,102 @@
+.w-field { display: flex; flex-direction: column; gap: 8px; width: 100%; }
+.w-label { font-size: 12px; color: var(--text-muted); padding-left: 4px; }
+.w-input-wrap { position: relative; display: flex; align-items: center; }
+.w-input {
+  width: 100%; height: 46px; padding: 0 20px; background: var(--surface);
+  border: 1px solid var(--border); border-radius: var(--radius-pill); outline: none; transition: border-color .15s;
+}
+.w-input:focus { border-color: var(--accent); }
+.w-input-icon { position: absolute; right: 16px; background: none; border: 0; cursor: pointer; color: var(--text-muted); display: flex; }
+.w-btn {
+  height: 46px; width: 100%; border: 0; border-radius: var(--radius-pill); cursor: pointer;
+  background: var(--accent); color: #fff; font-weight: 600; transition: background .15s;
+}
+.w-btn:hover { background: var(--accent-hover); }
+.w-btn:disabled { opacity: .6; cursor: default; }
+.w-btn--ghost { background: transparent; border: 1px solid var(--border); color: var(--text); width: auto; padding: 0 16px; height: 36px; font-weight: 500; }
+.w-btn--ghost:hover { background: var(--surface); }
+.w-btn--ghost[aria-pressed='true'] { background: var(--accent); border-color: var(--accent); }
+.w-divider { display: flex; align-items: center; gap: 12px; color: var(--text-muted); font-size: 12px; width: 100%; }
+.w-divider::before, .w-divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.w-social { width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); cursor: pointer; }
+.w-social:hover { border-color: var(--text); }
+.w-link { color: var(--text-muted); font-size: 12px; text-decoration: none; }
+.w-link:hover { color: var(--text); }
+.w-error { color: var(--accent-hover); font-size: 12px; }
+.w-panel { background: var(--surface); border-radius: var(--radius-card); box-shadow: var(--shadow-card); }
+.w-iconbtn { width: 40px; height: 40px; display: grid; place-items: center; flex: none; border: 0; border-radius: var(--radius-pill); background: var(--surface2); cursor: pointer; color: var(--text); transition: background .15s; }
+.w-iconbtn:hover { background: var(--accent); color: var(--on-accent); }
+
+
+/* ── buscador ── */
+.w-search { position: relative; flex: 0 1 260px; min-width: 160px; }
+.w-search__box { display: flex; align-items: center; gap: 10px; height: 42px; padding: 0 14px; background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius-pill); transition: border-color .15s, box-shadow .15s; }
+.w-search__box.is-open { border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent); }
+.w-search__icon { color: var(--accent); flex: none; }
+.w-search__box input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; font-size: 13.5px; }
+.w-search__clear { display: flex; border: 0; background: none; cursor: pointer; color: var(--text-muted); }
+.w-pop { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; box-shadow: 0 20px 60px rgba(0, 0, 0, .25); overflow: hidden; z-index: 50; }
+.w-search__res { position: absolute; top: 48px; left: 0; right: 0; max-height: 60vh; overflow-y: auto; }
+.w-pop__empty { padding: 14px 16px; font-size: 13px; color: var(--text-muted); }
+.w-pop__row { width: 100%; display: flex; align-items: center; gap: 10px; padding: 11px 16px; border: 0; border-bottom: 1px solid var(--border); background: transparent; cursor: pointer; text-align: left; color: var(--text); font-size: 14px; }
+.w-pop__row span { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.w-pop__row svg { color: var(--text-muted); flex: none; }
+.w-pop__row:hover { background: var(--surface2); }
+
+/* ── notificaciones ── */
+.w-notif { position: relative; }
+.w-iconbtn { position: relative; }
+.w-notif__badge { position: absolute; top: -3px; right: -3px; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 9px; background: var(--accent); color: var(--on-accent); font-size: 10px; font-weight: 700; display: grid; place-items: center; border: 2px solid var(--surface); }
+.w-notif__panel { position: absolute; top: 52px; right: 0; width: 392px; display: flex; flex-direction: column; max-height: min(560px, 80vh); }
+.w-notif__head { display: flex; align-items: center; gap: 10px; padding: 16px 18px 10px; }
+.w-notif__head strong { font-family: var(--font-title); font-size: 16px; font-weight: 600; flex: 1; }
+.w-notif__count { padding: 2px 9px; border-radius: 999px; background: var(--accent); color: var(--on-accent); font-size: 11px; font-weight: 600; }
+.w-link-btn { display: inline-flex; align-items: center; gap: 4px; border: 0; background: none; color: var(--text-muted); font-size: 12px; font-weight: 500; cursor: pointer; }
+.w-link-btn:hover { color: var(--accent); }
+.w-notif__tabs { display: flex; gap: 4px; padding: 0 18px 10px; border-bottom: 1px solid var(--border); }
+.w-notif__tabs button { height: 28px; padding: 0 12px; border-radius: 999px; border: 0; background: transparent; color: var(--text-muted); font-size: 12px; cursor: pointer; }
+.w-notif__tabs button.is-on { background: var(--surface2); color: var(--text); font-weight: 600; }
+.w-notif__list { overflow-y: auto; padding: 8px; display: flex; flex-direction: column; gap: 4px; }
+.w-notif__item { position: relative; display: flex; gap: 12px; align-items: flex-start; padding: 12px 34px 12px 12px; border-radius: 14px; cursor: pointer; transition: background .15s; }
+.w-notif__item:hover { background: var(--surface2); }
+.w-notif__item.is-new { background: color-mix(in srgb, var(--accent) 8%, transparent); }
+.w-notif__item.is-new::before { content: ''; position: absolute; left: 0; top: 14px; bottom: 14px; width: 3px; border-radius: 3px; background: var(--accent); }
+.w-notif__ico { flex: none; width: 36px; height: 36px; display: grid; place-items: center; border-radius: 11px; background: var(--surface2); color: var(--text-muted); }
+.w-notif__item--urgente .w-notif__ico { background: var(--accent); color: var(--on-accent); }
+.w-notif__item--alerta .w-notif__ico { background: color-mix(in srgb, var(--accent) 16%, transparent); color: var(--accent); }
+.w-notif__item--exito .w-notif__ico { color: var(--text); }
+.w-notif__txt { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.w-notif__row { display: flex; align-items: center; gap: 8px; }
+.w-notif__row b { font-size: 13px; font-weight: 600; color: var(--text); }
+.w-notif__dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); flex: none; }
+.w-notif__txt p { font-size: 12px; line-height: 1.45; color: var(--text-muted); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.w-notif__txt small { font-size: 11px; color: var(--text-muted); opacity: .75; }
+.w-notif__x { position: absolute; top: 8px; right: 8px; width: 24px; height: 24px; display: grid; place-items: center; border: 0; border-radius: 8px; background: transparent; color: var(--text-muted); cursor: pointer; opacity: 0; transition: opacity .15s; }
+.w-notif__item:hover .w-notif__x, .w-notif__x:focus-visible { opacity: 1; }
+.w-notif__x:hover { background: var(--surface); color: var(--accent); }
+.w-notif__empty { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 36px 0; color: var(--text-muted); font-size: 13px; }
+@media (hover: none) { .w-notif__x { opacity: 1; } }
+
+/* ── MAYIA orb, avatar, chip ── */
+.w-orb { width: 38px; height: 38px; flex: none; border-radius: 50%; overflow: hidden; display: grid; place-items: center; background: var(--surface2); border: 1px solid var(--border); cursor: pointer; transition: transform .2s, box-shadow .2s; }
+.w-orb:hover { transform: scale(1.08); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent); }
+.w-orb__canvas { width: 46px; height: 46px; pointer-events: none; }
+.w-avatar { width: 44px; height: 44px; flex: none; display: grid; place-items: center; border-radius: 50%; background: var(--accent); color: var(--on-accent); font-weight: 600; font-size: 14px; text-transform: uppercase; }
+.w-chip { display: inline-flex; align-items: center; gap: 7px; padding: 0 14px; height: 40px; border-radius: var(--radius-pill); background: var(--surface2); border: 1px solid var(--border); font-size: 13px; white-space: nowrap; }
+.w-chip svg { color: var(--text-muted); }
+
+@media (max-width: 560px) {
+  .w-notif { position: static; }
+  .w-notif__panel { position: fixed; top: 76px; left: 16px; right: 16px; width: auto; }
+}
+
+/* ── HeroCard ── */
+.w-hero { position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 4px; width: 100%; height: 100%; min-height: 0; padding: 16px; cursor: pointer; color: var(--text); border-radius: var(--radius-card); border: 2px solid color-mix(in srgb, var(--hero) 35%, transparent); background: linear-gradient(135deg, color-mix(in srgb, var(--hero) 14%, var(--surface)), var(--surface)); transition: border-color .3s, transform .2s; }
+.w-hero:hover { border-color: var(--hero); transform: translateY(-2px); }
+.w-hero__glow { position: absolute; inset: auto -10% -30% auto; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle, color-mix(in srgb, var(--hero) 35%, transparent), transparent 70%); filter: blur(50px); pointer-events: none; animation: w-float 7s ease-in-out infinite; }
+.w-hero__brain { position: relative; width: 170px; -webkit-mask-image: radial-gradient(closest-side, #000 55%, transparent 100%); mask-image: radial-gradient(closest-side, #000 55%, transparent 100%); }
+.w-hero__title { position: relative; font-size: 16px; font-weight: 600; color: var(--title); }
+.w-hero__sub { position: relative; max-width: 260px; font-size: 11.5px; line-height: 1.4; color: var(--text-muted); }
+.w-hero__sub strong { color: var(--title); }
+@keyframes w-float { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-30px, -20px); } }
+@media (prefers-reduced-motion: reduce) { .w-hero__glow { animation: none; } }

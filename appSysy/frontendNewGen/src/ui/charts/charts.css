@@ -1,0 +1,45 @@
+/* Estilo HUD: líneas finas, rejilla tenue, rayado, brillo suave; colores = paleta de marca (--serie1..6). */
+.chart { position: relative; width: 100%; height: 100%; min-height: 120px; display: flex; flex-direction: column; }
+.chart__plot { position: relative; flex: 1; min-height: 0; width: 100%; }
+.chart__plot > svg { display: block; overflow: visible; }
+.chart__grid { stroke: var(--border); stroke-width: 1; stroke-dasharray: 2 4; }
+.chart__grid.is-on { stroke: var(--accent); stroke-dasharray: none; opacity: .6; }
+.chart__axis { stroke: var(--text-muted); stroke-width: 1; opacity: .5; }
+.chart__tick { fill: var(--text-muted); font-size: 10px; }
+.chart__tick.is-on { fill: var(--accent); font-weight: 600; }
+.chart__val { fill: var(--text); font-size: 11px; font-weight: 600; }
+.chart__legend { display: flex; flex-wrap: wrap; gap: 4px 14px; justify-content: center; padding-top: 4px; font-size: 11px; color: var(--text-muted); }
+.chart__legend i, .chart__tip i { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 6px; }
+.chart__tip { position: absolute; z-index: 5; pointer-events: none; display: flex; flex-direction: column; gap: 3px; padding: 8px 10px; border-radius: 10px; font-size: 11px; background: var(--surface); border: 1px solid var(--border); box-shadow: 0 8px 24px rgba(0, 0, 0, .25); white-space: nowrap; }
+.chart__empty { color: var(--text-muted); font-size: 13px; padding: 8px 0; }
+
+.donut { display: flex; align-items: center; gap: 16px; height: 100%; flex-wrap: wrap; justify-content: center; }
+.donut__svg { flex: 0 1 170px; min-width: 110px; max-height: 100%; aspect-ratio: 1; }
+.donut__track { fill: none; stroke: var(--surface2); stroke-width: 10; }
+.donut__lbl { fill: var(--text-muted); font-size: 5.5px; }
+.donut__val { fill: var(--text); font-size: 9px; font-weight: 600; }
+.donut__list { flex: 1 1 130px; list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 12px; min-width: 120px; max-height: 100%; overflow-y: auto; }
+.donut__list li { display: flex; align-items: center; gap: 8px; padding: 2px 6px; border-radius: 6px; cursor: default; }
+.donut__list li.is-on { background: var(--surface2); }
+.donut__list i { width: 9px; height: 9px; border-radius: 2px; flex: none; }
+.donut__list span { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--text-muted); }
+
+.gauge { height: 100%; display: grid; place-items: center; }
+.gauge svg { max-height: 100%; width: 100%; max-width: 190px; }
+.gauge circle { fill: none; }
+.gauge__ticks { stroke: var(--text-muted); stroke-width: 3; opacity: .45; stroke-dasharray: 1.2 3.1; }
+.gauge__track { stroke: var(--surface2); stroke-width: 7; stroke-linecap: round; }
+.gauge__fill { stroke: var(--serie1); stroke-width: 7; stroke-linecap: round; filter: drop-shadow(0 0 4px var(--serie1)); }
+.gauge__val { fill: var(--text); font-size: 17px; font-weight: 600; }
+.gauge__lbl { fill: var(--text-muted); font-size: 6.5px; }
+
+.blist { display: flex; flex-direction: column; gap: 10px; }
+.blist__row { display: grid; grid-template-columns: minmax(60px, 90px) 1fr auto; align-items: center; gap: 10px; font-size: 12px; }
+.blist__lbl { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--text-muted); }
+.blist__track { height: 16px; border: 1px solid var(--border); border-radius: 3px; padding: 1px; }
+.blist__fill { display: block; height: 100%; border: 1px solid; border-radius: 2px; background-color: color-mix(in srgb, currentColor 14%, transparent); background-image: repeating-linear-gradient(45deg, currentColor 0 2px, transparent 2px 6px); transition: width .5s; }
+.blist__val { font-weight: 600; min-width: 48px; text-align: right; }
+
+.prog { display: block; height: 6px; border-radius: 99px; background: var(--surface2); overflow: hidden; }
+.prog > span { display: block; height: 100%; background: var(--serie1); box-shadow: 0 0 8px var(--serie1); transition: width .4s; }
+.prog > span.is-alert { background: var(--text); box-shadow: none; }

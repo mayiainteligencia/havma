@@ -1,0 +1,3683 @@
+{
+  "meta": {
+    "generado_en": "2026-10-01T14:39:15",
+    "fuentes": [
+      "canonical/*.canonical.json",
+      "rules/Flow_Anonimizado_1.xlsx.rules.json",
+      "dataEx/Flow_Anonimizado_1.xlsx (columna INVERSIÓN, releída directo)"
+    ]
+  },
+  "ejercicios": [
+    {
+      "id": "sp-v1",
+      "origen": "real",
+      "fuente_archivo": "Ejemplo de output smart planner.xlsx",
+      "herramienta": "smart_planner",
+      "subtipo": null,
+      "exercise": {
+        "pais": "MEXICO",
+        "industria": "GENERAL",
+        "anunciante": "Prueba",
+        "marca": "prueba",
+        "campana": "Prueba",
+        "periodo_inicio": "2026-10-01",
+        "periodo_fin": "2026-10-31",
+        "presupuesto": 50000000,
+        "moneda": "MXN",
+        "target": "P18-35 ABC+C",
+        "target_descripcion": null,
+        "genero": "Male, Female, Others",
+        "edad_min": 18,
+        "edad_max": 35,
+        "universo": 12415990,
+        "semanas": null
+      },
+      "touchpoints": [
+        {
+          "nombre": "Digital",
+          "color": "#BBA676",
+          "inversion": 20725946.45,
+          "share_inversion": 0.41,
+          "grps": 8785.76,
+          "impactos_miles": 1090839.29,
+          "share_impactos": 0.4,
+          "alcance": 0.43,
+          "frecuencia": 202.12,
+          "costo_por_punto_alcance": 476807.66,
+          "cpgrp": 2359.04,
+          "cpm": 19,
+          "cpgrp_input": 2359.03810001242,
+          "cpm_input": 19.0000000001,
+          "restriccion_min": 0,
+          "restriccion_max": 100,
+          "curva": {
+            "param_a": 43.4724867887112,
+            "param_b": 0.074267418856981,
+            "param_c": 946.307187467067
+          }
+        },
+        {
+          "nombre": "TVA",
+          "color": "#7700AA",
+          "inversion": 15000000,
+          "share_inversion": 0.3,
+          "grps": 7500,
+          "impactos_miles": 931199.25,
+          "share_impactos": 0.34,
+          "alcance": 0.69,
+          "frecuencia": 108.95,
+          "costo_por_punto_alcance": 217898.15,
+          "cpgrp": 2000,
+          "cpm": 16.11,
+          "cpgrp_input": 2000,
+          "cpm_input": 16.1082603964726,
+          "restriccion_min": 30,
+          "restriccion_max": 30,
+          "curva": {
+            "param_a": 68.9118436423885,
+            "param_b": -0.883972078260818,
+            "param_c": 1591.26628753228
+          }
+        },
+        {
+          "nombre": "OOH",
+          "color": "#C47300",
+          "inversion": 8274053.59,
+          "share_inversion": 0.17,
+          "grps": 5516.04,
+          "impactos_miles": 684870.44,
+          "share_impactos": 0.25,
+          "alcance": 0.09,
+          "frecuencia": 612.9,
+          "costo_por_punto_alcance": 919342.56,
+          "cpgrp": 1500,
+          "cpm": 12.08,
+          "cpgrp_input": 1500,
+          "cpm_input": 12.0811952973545,
+          "restriccion_min": 0,
+          "restriccion_max": 100,
+          "curva": {
+            "param_a": 9.00000285723246,
+            "param_b": 0.984102535375038,
+            "param_c": 419.654281797725
+          }
+        },
+        {
+          "nombre": "Amazon",
+          "color": "#89B6F1",
+          "inversion": 5999999.96,
+          "share_inversion": 0.12,
+          "grps": 241.62,
+          "impactos_miles": 30000,
+          "share_impactos": 0.01,
+          "alcance": 0.17,
+          "frecuencia": 14.56,
+          "costo_por_punto_alcance": 361663.16,
+          "cpgrp": 24831.98,
+          "cpm": 200,
+          "cpgrp_input": 24831.9800000124,
+          "cpm_input": 200.0000000001,
+          "restriccion_min": 0,
+          "restriccion_max": 12,
+          "curva": {
+            "param_a": 18.9088935447156,
+            "param_b": -0.991506610715237,
+            "param_c": 4096.010151258
+          }
+        }
+      ],
+      "totales": {
+        "inversion": 50000000,
+        "grps": 22043.42,
+        "impactos_miles": 2736908.98,
+        "alcance_neto": 0.87,
+        "frecuencia": 254.46,
+        "costo_por_punto_alcance": 577172.54,
+        "cpgrp": 2268.25,
+        "cpm": 18.27
+      },
+      "alcance_por_frecuencia": [
+        {
+          "touchpoint": "Total",
+          "f1": 0.8663,
+          "f2": 0.8629,
+          "f3": 0.8595,
+          "f4": 0.8561,
+          "f5": 0.8528,
+          "f6": 0.8494,
+          "f7": 0.8461,
+          "f8": 0.8427,
+          "f9": 0.8394,
+          "f10": 0.8361
+        },
+        {
+          "touchpoint": "Amazon",
+          "f1": 0.1659,
+          "f2": 0.1545,
+          "f3": 0.1439,
+          "f4": 0.134,
+          "f5": 0.1248,
+          "f6": 0.1162,
+          "f7": 0.1083,
+          "f8": 0.1008,
+          "f9": 0.0939,
+          "f10": 0.0875
+        },
+        {
+          "touchpoint": "Digital",
+          "f1": 0.4347,
+          "f2": 0.4325,
+          "f3": 0.4304,
+          "f4": 0.4283,
+          "f5": 0.4261,
+          "f6": 0.424,
+          "f7": 0.4219,
+          "f8": 0.4198,
+          "f9": 0.4178,
+          "f10": 0.4157
+        },
+        {
+          "touchpoint": "OOH",
+          "f1": 0.09,
+          "f2": 0.0899,
+          "f3": 0.0897,
+          "f4": 0.0896,
+          "f5": 0.0894,
+          "f6": 0.0893,
+          "f7": 0.0891,
+          "f8": 0.089,
+          "f9": 0.0888,
+          "f10": 0.0887
+        },
+        {
+          "touchpoint": "TVA",
+          "f1": 0.6884,
+          "f2": 0.6821,
+          "f3": 0.6758,
+          "f4": 0.6696,
+          "f5": 0.6635,
+          "f6": 0.6574,
+          "f7": 0.6513,
+          "f8": 0.6454,
+          "f9": 0.6394,
+          "f10": 0.6336
+        }
+      ],
+      "duplicaciones": [
+        {
+          "touchpoint_a": "Digital",
+          "touchpoint_b": "Amazon",
+          "indice": 100
+        },
+        {
+          "touchpoint_a": "Digital",
+          "touchpoint_b": "TVA",
+          "indice": 100
+        },
+        {
+          "touchpoint_a": "Digital",
+          "touchpoint_b": "OOH",
+          "indice": 100
+        },
+        {
+          "touchpoint_a": "Amazon",
+          "touchpoint_b": "TVA",
+          "indice": 100
+        },
+        {
+          "touchpoint_a": "Amazon",
+          "touchpoint_b": "OOH",
+          "indice": 100
+        },
+        {
+          "touchpoint_a": "TVA",
+          "touchpoint_b": "OOH",
+          "indice": 100
+        }
+      ],
+      "escenarios": [
+        {
+          "indice": 1,
+          "factor_presupuesto": 0.5,
+          "presupuesto_total": 24999999.9999999,
+          "por_touchpoint": [
+            {
+              "touchpoint": "TVA",
+              "inversion": 7500000.00000003,
+              "grps": 3750.00000000002,
+              "impactos_miles": 465599.625000002,
+              "share_impactos": 0.34643839878476,
+              "alcance": 0.680850881653474
+            },
+            {
+              "touchpoint": "Digital",
+              "inversion": 11175591.8346482,
+              "grps": 4737.35114095416,
+              "impactos_miles": 588189.043925755,
+              "share_impactos": 0.437653425000882,
+              "alcance": 0.431599006381638
+            },
+            {
+              "touchpoint": "Amazon",
+              "inversion": 2999999.99944378,
+              "grps": 120.811952951085,
+              "impactos_miles": 14999.9999972114,
+              "share_impactos": 0.0111610398758489,
+              "alcance": 0.14729602104798
+            },
+            {
+              "touchpoint": "OOH",
+              "inversion": 3324408.16590792,
+              "grps": 2216.27211060528,
+              "impactos_miles": 275172.123625541,
+              "share_impactos": 0.204747136338509,
+              "alcance": 0.0890962780070513
+            }
+          ],
+          "totales": {
+            "grps": 10824.4352045105,
+            "impactos_miles": 1343960.79254851,
+            "alcance": 0.859097323226987
+          }
+        },
+        {
+          "indice": 2,
+          "factor_presupuesto": 0.6,
+          "presupuesto_total": 29999999.9999999,
+          "por_touchpoint": [
+            {
+              "touchpoint": "TVA",
+              "inversion": 9000000.00000019,
+              "grps": 4500.0000000001,
+              "impactos_miles": 558719.550000012,
+              "share_impactos": 0.359209751743487,
+              "alcance": 0.684129406237764
+            },
+            {
+              "touchpoint": "Digital",
+              "inversion": 15313054.2678686,
+              "grps": 6491.22804239068,
+              "impactos_miles": 805950.224620423,
+              "share_impactos": 0.518158314137215,
+              "alcance": 0.434234824547845
+            },
+            {
+              "touchpoint": "Amazon",
+              "inversion": 3599999.99993813,
+              "grps": 144.97434356569,
+              "impactos_miles": 17999.9999996817,
+              "share_impactos": 0.0115724884358678,
+              "alcance": 0.15301614271495
+            },
+            {
+              "touchpoint": "OOH",
+              "inversion": 2086945.73219297,
+              "grps": 1391.29715479531,
+              "impactos_miles": 172743.31560967,
+              "share_impactos": 0.11105944568343,
+              "alcance": 0.0837379311061022
+            }
+          ],
+          "totales": {
+            "grps": 12527.4995407518,
+            "impactos_miles": 1555413.09022979,
+            "alcance": 0.861311564222241
+          }
+        },
+        {
+          "indice": 3,
+          "factor_presupuesto": 0.7,
+          "presupuesto_total": 35000000.0000002,
+          "por_touchpoint": [
+            {
+              "touchpoint": "TVA",
+              "inversion": 10500000.0000001,
+              "grps": 5250.00000000006,
+              "impactos_miles": 651839.475000007,
+              "share_impactos": 0.329040212507685,
+              "alcance": 0.686067643567101
+            },
+            {
+              "touchpoint": "Digital",
+              "inversion": 12345159.0121745,
+              "grps": 5233.13252639266,
+              "impactos_miles": 649745.21116366,
+              "share_impactos": 0.327983054964781,
+              "alcance": 0.432873358878345
+            },
+            {
+              "touchpoint": "Amazon",
+              "inversion": 4199999.93813099,
+              "grps": 169.136731671373,
+              "impactos_miles": 20999.9996906445,
+              "share_impactos": 0.0106005306918101,
+              "alcance": 0.15738155117429
+            },
+            {
+              "touchpoint": "OOH",
+              "inversion": 7954841.04969454,
+              "grps": 5303.22736646302,
+              "impactos_miles": 658448.179497312,
+              "share_impactos": 0.332376201835723,
+              "alcance": 0.0899994483855368
+            }
+          ],
+          "totales": {
+            "grps": 15955.4966245271,
+            "impactos_miles": 1981032.86535162,
+            "alcance": 0.863482367484426
+          }
+        },
+        {
+          "indice": 4,
+          "factor_presupuesto": 0.8,
+          "presupuesto_total": 40000000.0000001,
+          "por_touchpoint": [
+            {
+              "touchpoint": "TVA",
+              "inversion": 11999999.9999995,
+              "grps": 5999.99999999974,
+              "impactos_miles": 744959.399999967,
+              "share_impactos": 0.335061991634924,
+              "alcance": 0.68723804019572
+            },
+            {
+              "touchpoint": "Digital",
+              "inversion": 15458696.8651397,
+              "grps": 6552.96617085511,
+              "impactos_miles": 813615.624476754,
+              "share_impactos": 0.365941649387182,
+              "alcance": 0.434265772662465
+            },
+            {
+              "touchpoint": "Amazon",
+              "inversion": 4799999.99999717,
+              "grps": 193.299124757461,
+              "impactos_miles": 23999.9999999738,
+              "share_impactos": 0.0107945316204209,
+              "alcance": 0.160822499618698
+            },
+            {
+              "touchpoint": "OOH",
+              "inversion": 7741303.13486382,
+              "grps": 5160.86875657588,
+              "impactos_miles": 640772.948729586,
+              "share_impactos": 0.288201827357474,
+              "alcance": 0.089999214070139
+            }
+          ],
+          "totales": {
+            "grps": 17907.1340521882,
+            "impactos_miles": 2223347.97320628,
+            "alcance": 0.864879271165487
+          }
+        },
+        {
+          "indice": 5,
+          "factor_presupuesto": 0.9,
+          "presupuesto_total": 44999999.9999999,
+          "por_touchpoint": [
+            {
+              "touchpoint": "TVA",
+              "inversion": 13499999.9999998,
+              "grps": 6749.9999999999,
+              "impactos_miles": 838079.324999988,
+              "share_impactos": 0.338068074722082,
+              "alcance": 0.687953837026417
+            },
+            {
+              "touchpoint": "Digital",
+              "inversion": 18128928.8807259,
+              "grps": 7684.8817662718,
+              "impactos_miles": 954154.15161213,
+              "share_impactos": 0.384890841954129,
+              "alcance": 0.434586049170533
+            },
+            {
+              "touchpoint": "Amazon",
+              "inversion": 5399996.5113586,
+              "grps": 217.461374862411,
+              "impactos_miles": 26999.9825567795,
+              "share_impactos": 0.0108913701223931,
+              "alcance": 0.163604470605635
+            },
+            {
+              "touchpoint": "OOH",
+              "inversion": 7971074.60791559,
+              "grps": 5314.04973861039,
+              "impactos_miles": 659791.884140893,
+              "share_impactos": 0.266149713201396,
+              "alcance": 0.0899994631565184
+            }
+          ],
+          "totales": {
+            "grps": 19966.3928797445,
+            "impactos_miles": 2479025.34330979,
+            "alcance": 0.865711532411254
+          }
+        },
+        {
+          "indice": 6,
+          "factor_presupuesto": 1.0,
+          "presupuesto_total": 50000000,
+          "por_touchpoint": [
+            {
+              "touchpoint": "TVA",
+              "inversion": 15000000.0000001,
+              "grps": 7500.00000000004,
+              "impactos_miles": 931199.250000005,
+              "share_impactos": 0.34023756603996,
+              "alcance": 0.688395021823334
+            },
+            {
+              "touchpoint": "Digital",
+              "inversion": 20725946.4493049,
+              "grps": 8785.76164123668,
+              "impactos_miles": 1090839.28679978,
+              "share_impactos": 0.398566154216213,
+              "alcance": 0.434681494717905
+            },
+            {
+              "touchpoint": "Amazon",
+              "inversion": 5999999.96477591,
+              "grps": 241.623904528471,
+              "impactos_miles": 29999.9998238646,
+              "share_impactos": 0.0109612705565118,
+              "alcance": 0.165900223314974
+            },
+            {
+              "touchpoint": "OOH",
+              "inversion": 8274053.5859191,
+              "grps": 5516.03572394606,
+              "impactos_miles": 684870.443881571,
+              "share_impactos": 0.250235009187316,
+              "alcance": 0.0899996791618454
+            }
+          ],
+          "totales": {
+            "grps": 22043.4212697113,
+            "impactos_miles": 2736908.98050522,
+            "alcance": 0.866292077898179
+          }
+        },
+        {
+          "indice": 7,
+          "factor_presupuesto": 1.1,
+          "presupuesto_total": 54999999.9999995,
+          "por_touchpoint": [
+            {
+              "touchpoint": "TVA",
+              "inversion": 16500000.0000001,
+              "grps": 8250.00000000005,
+              "impactos_miles": 1024319.17500001,
+              "share_impactos": 0.340313264549383,
+              "alcance": 0.688668251470583
+            },
+            {
+              "touchpoint": "Digital",
+              "inversion": 22820759.3011299,
+              "grps": 9673.75613857607,
+              "impactos_miles": 1201092.59478999,
+              "share_impactos": 0.399043337208901,
+              "alcance": 0.434707897556871
+            },
+            {
+              "touchpoint": "Amazon",
+              "inversion": 6599999.6622225,
+              "grps": 265.786282939146,
+              "impactos_miles": 32999.998311096,
+              "share_impactos": 0.0109637088023595,
+              "alcance": 0.167826919433153
+            },
+            {
+              "touchpoint": "OOH",
+              "inversion": 9079241.03664695,
+              "grps": 6052.82735776464,
+              "impactos_miles": 751518.439457321,
+              "share_impactos": 0.249679689439356,
+              "alcance": 0.0899999313383133
+            }
+          ],
+          "totales": {
+            "grps": 24242.3697792799,
+            "impactos_miles": 3009930.20755841,
+            "alcance": 0.866724163534468
+          }
+        },
+        {
+          "indice": 8,
+          "factor_presupuesto": 1.2,
+          "presupuesto_total": 59999999.9999994,
+          "por_touchpoint": [
+            {
+              "touchpoint": "TVA",
+              "inversion": 17999999.9999999,
+              "grps": 8999.99999999993,
+              "impactos_miles": 1117439.09999999,
+              "share_impactos": 0.339988831279606,
+              "alcance": 0.688837966357167
+            },
+            {
+              "touchpoint": "Digital",
+              "inversion": 24791419.6087238,
+              "grps": 10509.1221750905,
+              "impactos_miles": 1304811.55834702,
+              "share_impactos": 0.396998240675959,
+              "alcance": 0.434717848302834
+            },
+            {
+              "touchpoint": "Amazon",
+              "inversion": 7199999.9821688,
+              "grps": 289.948686418288,
+              "impactos_miles": 35999.999910826,
+              "share_impactos": 0.0109532572251568,
+              "alcance": 0.169466914998669
+            },
+            {
+              "touchpoint": "OOH",
+              "inversion": 10008580.4091069,
+              "grps": 6672.38693940461,
+              "impactos_miles": 828442.895157782,
+              "share_impactos": 0.252059670819278,
+              "alcance": 0.0900000063574105
+            }
+          ],
+          "totales": {
+            "grps": 26471.4578009133,
+            "impactos_miles": 3286693.55341562,
+            "alcance": 0.867061675338708
+          }
+        },
+        {
+          "indice": 9,
+          "factor_presupuesto": 1.3,
+          "presupuesto_total": 64999999.9999997,
+          "por_touchpoint": [
+            {
+              "touchpoint": "TVA",
+              "inversion": 19499999.9999999,
+              "grps": 9749.99999999995,
+              "impactos_miles": 1210559.02499999,
+              "share_impactos": 0.340589143375195,
+              "alcance": 0.688943577483451
+            },
+            {
+              "touchpoint": "Digital",
+              "inversion": 27065580.4559607,
+              "grps": 11473.1425727368,
+              "impactos_miles": 1424504.23451675,
+              "share_impactos": 0.40078233853025,
+              "alcance": 0.43472233341224
+            },
+            {
+              "touchpoint": "Amazon",
+              "inversion": 7799999.99999214,
+              "grps": 314.111077730742,
+              "impactos_miles": 38999.9999999412,
+              "share_impactos": 0.0109725972193819,
+              "alcance": 0.170879746963666
+            },
+            {
+              "touchpoint": "OOH",
+              "inversion": 10634419.544047,
+              "grps": 7089.61302936468,
+              "impactos_miles": 880245.644764616,
+              "share_impactos": 0.247655920875174,
+              "alcance": 0.0900000203524897
+            }
+          ],
+          "totales": {
+            "grps": 28626.8666798322,
+            "impactos_miles": 3554308.9042813,
+            "alcance": 0.867333917003717
+          }
+        },
+        {
+          "indice": 10,
+          "factor_presupuesto": 1.4,
+          "presupuesto_total": 70000000.0000003,
+          "por_touchpoint": [
+            {
+              "touchpoint": "TVA",
+              "inversion": 20999999.9999999,
+              "grps": 10500,
+              "impactos_miles": 1303678.95,
+              "share_impactos": 0.338631724749125,
+              "alcance": 0.689009372891512
+            },
+            {
+              "touchpoint": "Digital",
+              "inversion": 28413493.7699969,
+              "grps": 12044.5251689014,
+              "impactos_miles": 1495447.04051828,
+              "share_impactos": 0.388443650640889,
+              "alcance": 0.434723482216527
+            },
+            {
+              "touchpoint": "Amazon",
+              "inversion": 8399999.93006637,
+              "grps": 338.273465509483,
+              "impactos_miles": 41999.9996503108,
+              "share_impactos": 0.010909535910699,
+              "alcance": 0.172109536895095
+            },
+            {
+              "touchpoint": "OOH",
+              "inversion": 12186506.299937,
+              "grps": 8124.33753329137,
+              "impactos_miles": 1008716.9356997,
+              "share_impactos": 0.262015088699287,
+              "alcance": 0.0900000278740265
+            }
+          ],
+          "totales": {
+            "grps": 31007.1361677022,
+            "impactos_miles": 3849842.92586829,
+            "alcance": 0.867558984023379
+          }
+        },
+        {
+          "indice": 11,
+          "factor_presupuesto": 1.5,
+          "presupuesto_total": 75000000.0000011,
+          "por_touchpoint": [
+            {
+              "touchpoint": "TVA",
+              "inversion": 22500000.0000013,
+              "grps": 11250.0000000007,
+              "impactos_miles": 1396798.87500008,
+              "share_impactos": 0.340409391448801,
+              "alcance": 0.68905039240868
+            },
+            {
+              "touchpoint": "Digital",
+              "inversion": 31157669.0940617,
+              "grps": 13207.7854503061,
+              "impactos_miles": 1639877.32073146,
+              "share_impactos": 0.39964926289109,
+              "alcance": 0.434724462567155
+            },
+            {
+              "touchpoint": "Amazon",
+              "inversion": 8999999.99999064,
+              "grps": 362.435858920076,
+              "impactos_miles": 44999.9999999307,
+              "share_impactos": 0.0109668062377066,
+              "alcance": 0.173189674965661
+            },
+            {
+              "touchpoint": "OOH",
+              "inversion": 12342330.9059474,
+              "grps": 8228.22060396494,
+              "impactos_miles": 1021615.04736623,
+              "share_impactos": 0.248974539422402,
+              "alcance": 0.0900000280271524
+            }
+          ],
+          "totales": {
+            "grps": 33048.4419131918,
+            "impactos_miles": 4103291.2430977,
+            "alcance": 0.867749453617473
+          }
+        }
+      ],
+      "validaciones": [
+        {
+          "regla": "escenarios_ancho",
+          "nivel": "ok",
+          "mensaje": "ancho 25 = 5 + 5*4",
+          "detalle": []
+        },
+        {
+          "regla": "escenarios_orden",
+          "nivel": "ok",
+          "mensaje": "orden de touchpoints resuelto cruzando valores con Media Mix table",
+          "detalle": []
+        },
+        {
+          "regla": "inversion_vs_total",
+          "nivel": "ok",
+          "mensaje": "la suma por touchpoint cuadra con el total",
+          "detalle": []
+        },
+        {
+          "regla": "inversion_vs_presupuesto",
+          "nivel": "ok",
+          "mensaje": "la suma por touchpoint cuadra con el presupuesto del Exercise",
+          "detalle": []
+        },
+        {
+          "regla": "share_inversion_suma_1",
+          "nivel": "ok",
+          "mensaje": "share_inversion suma 1",
+          "detalle": []
+        },
+        {
+          "regla": "share_impactos_suma_1",
+          "nivel": "ok",
+          "mensaje": "share_impactos suma 1",
+          "detalle": []
+        },
+        {
+          "regla": "grps_vs_total",
+          "nivel": "ok",
+          "mensaje": "la suma de GRPs cuadra con el total",
+          "detalle": []
+        },
+        {
+          "regla": "impactos_vs_grps_universo",
+          "nivel": "ok",
+          "mensaje": "impactos_miles ≈ grps * universo / 100 / 1000",
+          "detalle": []
+        },
+        {
+          "regla": "alcance_x_frecuencia_vs_grps",
+          "nivel": "ok",
+          "mensaje": "alcance * frecuencia ≈ grps / 100",
+          "detalle": []
+        },
+        {
+          "regla": "alcance_neto_rango",
+          "nivel": "ok",
+          "mensaje": "el alcance neto está entre el mayor individual y la suma",
+          "detalle": []
+        },
+        {
+          "regla": "rf_decreciente",
+          "nivel": "ok",
+          "mensaje": "todas las series 1+ a 10+ son decrecientes",
+          "detalle": []
+        },
+        {
+          "regla": "alcance_mmt_vs_rf_1mas",
+          "nivel": "ok",
+          "mensaje": "el alcance de Media Mix coincide con 1+ de Reach & Frequency",
+          "detalle": []
+        },
+        {
+          "regla": "cpgrp_vs_inversion_grps",
+          "nivel": "ok",
+          "mensaje": "CPGRP ≈ inversión / GRPs",
+          "detalle": []
+        },
+        {
+          "regla": "cpm_vs_inversion_impactos",
+          "nivel": "ok",
+          "mensaje": "CPM ≈ inversión / (impactos_miles * 1000) * 1000",
+          "detalle": []
+        },
+        {
+          "regla": "totales_vs_plan_cost",
+          "nivel": "ok",
+          "mensaje": "los totales coinciden con Plan Cost table",
+          "detalle": []
+        },
+        {
+          "regla": "touchpoints_en_todas_las_hojas",
+          "nivel": "ok",
+          "mensaje": "cada touchpoint del mix aparece en todas las hojas",
+          "detalle": []
+        },
+        {
+          "regla": "restricciones_forzadas",
+          "nivel": "warning",
+          "mensaje": "1 touchpoint(s) con mínimo = máximo: el mix venía forzado, el optimizador no optimizó",
+          "detalle": [
+            "TVA: 30"
+          ]
+        },
+        {
+          "regla": "duplicaciones_default",
+          "nivel": "warning",
+          "mensaje": "los 6 índices de duplicación valen 100 (valor por defecto)",
+          "detalle": []
+        },
+        {
+          "regla": "escenarios_share_total_1",
+          "nivel": "ok",
+          "mensaje": "share total = 1 en todos los escenarios",
+          "detalle": []
+        },
+        {
+          "regla": "escenarios_factor_rango",
+          "nivel": "ok",
+          "mensaje": "factores de presupuesto entre 0.5 y 1.5 (0.5 a 1.5)",
+          "detalle": []
+        }
+      ]
+    },
+    {
+      "id": "sp-v2",
+      "origen": "real",
+      "fuente_archivo": "Ejemplo output smart planner v2.xlsx",
+      "herramienta": "smart_planner",
+      "subtipo": null,
+      "exercise": {
+        "pais": "MEXICO",
+        "industria": "Demo",
+        "anunciante": "Demo",
+        "marca": "Demo",
+        "campana": "Demo",
+        "periodo_inicio": "2026-06-01",
+        "periodo_fin": "2026-06-30",
+        "presupuesto": 4750205,
+        "moneda": "MXN",
+        "target": "P18-55",
+        "target_descripcion": null,
+        "genero": "Male, Female, Others",
+        "edad_min": 18,
+        "edad_max": 55,
+        "universo": 17420700,
+        "semanas": null
+      },
+      "touchpoints": [
+        {
+          "nombre": "Netflix",
+          "color": "#F70000",
+          "inversion": 807534.85,
+          "share_inversion": 0.17,
+          "grps": 34.67,
+          "impactos_miles": 6039,
+          "share_impactos": 0.08,
+          "alcance": 0.08,
+          "frecuencia": 4.18,
+          "costo_por_punto_alcance": 97342,
+          "cpgrp": 23294.96,
+          "cpm": 133.72,
+          "cpgrp_input": 23294.96004,
+          "cpm_input": 133.72,
+          "restriccion_min": 17,
+          "restriccion_max": 17,
+          "curva": {
+            "param_a": 10.9999964564003,
+            "param_b": 2.99932233094118,
+            "param_c": 13.4079833000971
+          }
+        },
+        {
+          "nombre": "VIX",
+          "color": "#F8E416",
+          "inversion": 760032.8,
+          "share_inversion": 0.16,
+          "grps": 37.94,
+          "impactos_miles": 6608.98,
+          "share_impactos": 0.09,
+          "alcance": 0.03,
+          "frecuencia": 12.67,
+          "costo_por_punto_alcance": 253920.29,
+          "cpgrp": 20033.81,
+          "cpm": 115,
+          "cpgrp_input": 20033.8050000002,
+          "cpm_input": 115.000000000001,
+          "restriccion_min": 16,
+          "restriccion_max": 16,
+          "curva": {
+            "param_a": 2.99999674338544,
+            "param_b": 1.08481897300174,
+            "param_c": 5.56056334920831
+          }
+        },
+        {
+          "nombre": "YT_CTV",
+          "color": "#C47300",
+          "inversion": 712530.75,
+          "share_inversion": 0.15,
+          "grps": 260.02,
+          "impactos_miles": 45297.57,
+          "share_impactos": 0.59,
+          "alcance": 0.27,
+          "frecuencia": 9.7,
+          "costo_por_punto_alcance": 26588.67,
+          "cpgrp": 2740.28,
+          "cpm": 15.73,
+          "cpgrp_input": 2740.27611,
+          "cpm_input": 15.73,
+          "restriccion_min": 15,
+          "restriccion_max": 15,
+          "curva": {
+            "param_a": 27.0000303401382,
+            "param_b": 0.905500119203948,
+            "param_c": 46.9542207530856
+          }
+        },
+        {
+          "nombre": "Prime",
+          "color": "#89B6F1",
+          "inversion": 712530.75,
+          "share_inversion": 0.15,
+          "grps": 26.74,
+          "impactos_miles": 4658.59,
+          "share_impactos": 0.06,
+          "alcance": 0.05,
+          "frecuencia": 5.48,
+          "costo_por_punto_alcance": 146109.68,
+          "cpgrp": 26644.96,
+          "cpm": 152.95,
+          "cpgrp_input": 26644.96065,
+          "cpm_input": 152.95,
+          "restriccion_min": 15,
+          "restriccion_max": 15,
+          "curva": {
+            "param_a": 8.53115804504771,
+            "param_b": -0.992640005253588,
+            "param_c": 2736.12101846816
+          }
+        },
+        {
+          "nombre": "Pluto",
+          "color": "#7CE032",
+          "inversion": 617526.65,
+          "share_inversion": 0.13,
+          "grps": 32.23,
+          "impactos_miles": 5613.88,
+          "share_impactos": 0.07,
+          "alcance": 0.03,
+          "frecuencia": 10.77,
+          "costo_por_punto_alcance": 206466.56,
+          "cpgrp": 19162.77,
+          "cpm": 110,
+          "cpgrp_input": 19162.7700000017,
+          "cpm_input": 110.00000000001,
+          "restriccion_min": 13,
+          "restriccion_max": 13,
+          "curva": {
+            "param_a": 2.99999674338544,
+            "param_b": 1.08481897300174,
+            "param_c": 4.93145106003024
+          }
+        },
+        {
+          "nombre": "Disney",
+          "color": "#38529A",
+          "inversion": 617526.65,
+          "share_inversion": 0.13,
+          "grps": 26.26,
+          "impactos_miles": 4574.27,
+          "share_impactos": 0.06,
+          "alcance": 0.04,
+          "frecuencia": 6.57,
+          "costo_por_punto_alcance": 154507.57,
+          "cpgrp": 23517.95,
+          "cpm": 135,
+          "cpgrp_input": 23517.9450000017,
+          "cpm_input": 135.00000000001,
+          "restriccion_min": 13,
+          "restriccion_max": 13,
+          "curva": {
+            "param_a": 4.00000355284713,
+            "param_b": 0.709787236379618,
+            "param_c": 3.43353228617081
+          }
+        },
+        {
+          "nombre": "MAX",
+          "color": "#7700AA",
+          "inversion": 522522.55,
+          "share_inversion": 0.11,
+          "grps": 26.08,
+          "impactos_miles": 4543.67,
+          "share_impactos": 0.06,
+          "alcance": 0.05,
+          "frecuencia": 5.43,
+          "costo_por_punto_alcance": 108765.47,
+          "cpgrp": 20033.81,
+          "cpm": 115,
+          "cpgrp_input": 20033.8050000017,
+          "cpm_input": 115.00000000001,
+          "restriccion_min": 11,
+          "restriccion_max": 11,
+          "curva": {
+            "param_a": 4.99999190176733,
+            "param_b": 1.39974060781396,
+            "param_c": 6.3739337969117
+          }
+        }
+      ],
+      "totales": {
+        "inversion": 4750205,
+        "grps": 443.93,
+        "impactos_miles": 77335.96,
+        "alcance_neto": 0.45,
+        "frecuencia": 9.85,
+        "costo_por_punto_alcance": 105368.46,
+        "cpgrp": 10700.31,
+        "cpm": 61.42
+      },
+      "alcance_por_frecuencia": [
+        {
+          "touchpoint": "Total",
+          "f1": 0.4508,
+          "f2": 0.405,
+          "f3": 0.3639,
+          "f4": 0.327,
+          "f5": 0.2937,
+          "f6": 0.2639,
+          "f7": 0.2371,
+          "f8": 0.213,
+          "f9": 0.1914,
+          "f10": 0.172
+        },
+        {
+          "touchpoint": "Disney",
+          "f1": 0.04,
+          "f2": 0.0339,
+          "f3": 0.0287,
+          "f4": 0.0244,
+          "f5": 0.0206,
+          "f6": 0.0175,
+          "f7": 0.0148,
+          "f8": 0.0126,
+          "f9": 0.0107,
+          "f10": 0.009
+        },
+        {
+          "touchpoint": "MAX",
+          "f1": 0.048,
+          "f2": 0.0392,
+          "f3": 0.032,
+          "f4": 0.0261,
+          "f5": 0.0213,
+          "f6": 0.0174,
+          "f7": 0.0142,
+          "f8": 0.0116,
+          "f9": 0.0094,
+          "f10": 0.0077
+        },
+        {
+          "touchpoint": "Netflix",
+          "f1": 0.083,
+          "f2": 0.0631,
+          "f3": 0.048,
+          "f4": 0.0365,
+          "f5": 0.0278,
+          "f6": 0.0211,
+          "f7": 0.0161,
+          "f8": 0.0122,
+          "f9": 0.0093,
+          "f10": 0.0071
+        },
+        {
+          "touchpoint": "Pluto",
+          "f1": 0.0299,
+          "f2": 0.0271,
+          "f3": 0.0246,
+          "f4": 0.0223,
+          "f5": 0.0203,
+          "f6": 0.0184,
+          "f7": 0.0167,
+          "f8": 0.0151,
+          "f9": 0.0137,
+          "f10": 0.0124
+        },
+        {
+          "touchpoint": "Prime",
+          "f1": 0.0488,
+          "f2": 0.0399,
+          "f3": 0.0326,
+          "f4": 0.0267,
+          "f5": 0.0218,
+          "f6": 0.0178,
+          "f7": 0.0146,
+          "f8": 0.0119,
+          "f9": 0.0097,
+          "f10": 0.008
+        },
+        {
+          "touchpoint": "VIX",
+          "f1": 0.0299,
+          "f2": 0.0276,
+          "f3": 0.0254,
+          "f4": 0.0234,
+          "f5": 0.0215,
+          "f6": 0.0198,
+          "f7": 0.0183,
+          "f8": 0.0168,
+          "f9": 0.0155,
+          "f10": 0.0143
+        },
+        {
+          "touchpoint": "YT_CTV",
+          "f1": 0.268,
+          "f2": 0.2404,
+          "f3": 0.2156,
+          "f4": 0.1934,
+          "f5": 0.1734,
+          "f6": 0.1556,
+          "f7": 0.1395,
+          "f8": 0.1252,
+          "f9": 0.1123,
+          "f10": 0.1007
+        }
+      ],
+      "duplicaciones": [
+        {
+          "touchpoint_a": "Netflix",
+          "touchpoint_b": "Prime",
+          "indice": 100
+        },
+        {
+          "touchpoint_a": "Netflix",
+          "touchpoint_b": "MAX",
+          "indice": 100
+        },
+        {
+          "touchpoint_a": "Netflix",
+          "touchpoint_b": "Disney",
+          "indice": 100
+        },
+        {
+          "touchpoint_a": "Netflix",
+          "touchpoint_b": "Pluto",
+          "indice": 100
+        },
+        {
+          "touchpoint_a": "Netflix",
+          "touchpoint_b": "VIX",
+          "indice": 100
+        },
+        {
+          "touchpoint_a": "Netflix",
+          "touchpoint_b": "YT_CTV",
+          "indice": 100
+        },
+        {
+          "touchpoint_a": "Prime",
+          "touchpoint_b": "MAX",
+          "indice": 100
+        },
+        {
+          "touchpoint_a": "Prime",
+          "touchpoint_b": "Disney",
+          "indice": 100
+        },
+        {
+          "touchpoint_a": "Prime",
+          "touchpoint_b": "Pluto",
+          "indice": 100
+        },
+        {
+          "touchpoint_a": "Prime",
+          "touchpoint_b": "VIX",
+          "indice": 100
+        },
+        {
+          "touchpoint_a": "Prime",
+          "touchpoint_b": "YT_CTV",
+          "indice": 100
+        },
+        {
+          "touchpoint_a": "MAX",
+          "touchpoint_b": "Disney",
+          "indice": 100
+        },
+        {
+          "touchpoint_a": "MAX",
+          "touchpoint_b": "Pluto",
+          "indice": 100
+        },
+        {
+          "touchpoint_a": "MAX",
+          "touchpoint_b": "VIX",
+          "indice": 100
+        },
+        {
+          "touchpoint_a": "MAX",
+          "touchpoint_b": "YT_CTV",
+          "indice": 100
+        },
+        {
+          "touchpoint_a": "Disney",
+          "touchpoint_b": "Pluto",
+          "indice": 100
+        },
+        {
+          "touchpoint_a": "Disney",
+          "touchpoint_b": "VIX",
+          "indice": 100
+        },
+        {
+          "touchpoint_a": "Disney",
+          "touchpoint_b": "YT_CTV",
+          "indice": 100
+        },
+        {
+          "touchpoint_a": "Pluto",
+          "touchpoint_b": "VIX",
+          "indice": 100
+        },
+        {
+          "touchpoint_a": "Pluto",
+          "touchpoint_b": "YT_CTV",
+          "indice": 100
+        },
+        {
+          "touchpoint_a": "VIX",
+          "touchpoint_b": "YT_CTV",
+          "indice": 100
+        }
+      ],
+      "escenarios": [
+        {
+          "indice": 1,
+          "factor_presupuesto": 0.5,
+          "presupuesto_total": 2375102.49999996,
+          "por_touchpoint": [
+            {
+              "touchpoint": "YT_CTV",
+              "inversion": 356265.374999899,
+              "grps": 130.010758295411,
+              "impactos_miles": 22648.7841703687,
+              "share_impactos": 0.585724538189118,
+              "alcance": 0.239460368834397
+            },
+            {
+              "touchpoint": "Netflix",
+              "inversion": 403767.425000008,
+              "grps": 17.3328232504669,
+              "impactos_miles": 3019.49913999408,
+              "share_impactos": 0.0780878446291752,
+              "alcance": 0.0437662863573547
+            },
+            {
+              "touchpoint": "Prime",
+              "inversion": 356265.375000011,
+              "grps": 13.3708350963547,
+              "impactos_miles": 2329.29306963067,
+              "share_impactos": 0.0602382934666081,
+              "alcance": 0.0340915686220176
+            },
+            {
+              "touchpoint": "MAX",
+              "inversion": 261261.275000012,
+              "grps": 13.041021163977,
+              "impactos_miles": 2271.83717391295,
+              "share_impactos": 0.0587524155610942,
+              "alcance": 0.0368673348047693
+            },
+            {
+              "touchpoint": "Disney",
+              "inversion": 308763.325000011,
+              "grps": 13.1288394883136,
+              "impactos_miles": 2287.13574074065,
+              "share_impactos": 0.059148054723122,
+              "alcance": 0.0385287307405691
+            },
+            {
+              "touchpoint": "Pluto",
+              "inversion": 308763.325000012,
+              "grps": 16.1126666447483,
+              "impactos_miles": 2806.93931818167,
+              "share_impactos": 0.0725907944329214,
+              "alcance": 0.0277111349008172
+            },
+            {
+              "touchpoint": "VIX",
+              "inversion": 380016.400000012,
+              "grps": 18.9687580566951,
+              "impactos_miles": 3304.49043478268,
+              "share_impactos": 0.0854580589979607,
+              "alcance": 0.0280074367035072
+            }
+          ],
+          "totales": {
+            "grps": 221.965701995967,
+            "impactos_miles": 38667.9790476114,
+            "alcance": 0.385244339790639
+          }
+        },
+        {
+          "indice": 2,
+          "factor_presupuesto": 0.6,
+          "presupuesto_total": 2850122.9999999,
+          "por_touchpoint": [
+            {
+              "touchpoint": "YT_CTV",
+              "inversion": 427518.44999975,
+              "grps": 156.012909954446,
+              "impactos_miles": 27178.5410044342,
+              "share_impactos": 0.585724538189038,
+              "alcance": 0.252036122082048
+            },
+            {
+              "touchpoint": "Netflix",
+              "inversion": 484520.910000022,
+              "grps": 20.7993879005608,
+              "impactos_miles": 3623.39896799299,
+              "share_impactos": 0.07808784462919,
+              "alcance": 0.052991003660642
+            },
+            {
+              "touchpoint": "Prime",
+              "inversion": 427518.450000031,
+              "grps": 16.0450021156264,
+              "impactos_miles": 2795.15168355692,
+              "share_impactos": 0.0602382934666206,
+              "alcance": 0.0378925409898647
+            },
+            {
+              "touchpoint": "MAX",
+              "inversion": 313513.530000031,
+              "grps": 15.6492253967733,
+              "impactos_miles": 2726.20460869568,
+              "share_impactos": 0.058752415561107,
+              "alcance": 0.0408043978602959
+            },
+            {
+              "touchpoint": "Disney",
+              "inversion": 370515.990000022,
+              "grps": 15.7546073859767,
+              "impactos_miles": 2744.56288888885,
+              "share_impactos": 0.0591480547231332,
+              "alcance": 0.0393095753780637
+            },
+            {
+              "touchpoint": "Pluto",
+              "inversion": 370515.990000015,
+              "grps": 19.335199973698,
+              "impactos_miles": 3368.32718181801,
+              "share_impactos": 0.0725907944329334,
+              "alcance": 0.0287861064603132
+            },
+            {
+              "touchpoint": "VIX",
+              "inversion": 456019.680000032,
+              "grps": 22.762509668035,
+              "impactos_miles": 3965.38852173938,
+              "share_impactos": 0.0854580589979781,
+              "alcance": 0.0289752839032232
+            }
+          ],
+          "totales": {
+            "grps": 266.358842395116,
+            "impactos_miles": 46401.574857126,
+            "alcance": 0.407764927761117
+          }
+        },
+        {
+          "indice": 3,
+          "factor_presupuesto": 0.7,
+          "presupuesto_total": 3325143.50000026,
+          "por_touchpoint": [
+            {
+              "touchpoint": "YT_CTV",
+              "inversion": 498771.525000194,
+              "grps": 182.015061613698,
+              "impactos_miles": 31708.2978385375,
+              "share_impactos": 0.585724538189284,
+              "alcance": 0.259534231441572
+            },
+            {
+              "touchpoint": "Netflix",
+              "inversion": 565274.395000042,
+              "grps": 24.2659525506549,
+              "impactos_miles": 4227.29879599194,
+              "share_impactos": 0.078087844629149,
+              "alcance": 0.0617023361047226
+            },
+            {
+              "touchpoint": "Prime",
+              "inversion": 498771.524999987,
+              "grps": 18.7191691348956,
+              "impactos_miles": 3261.01029748275,
+              "share_impactos": 0.0602382934665813,
+              "alcance": 0.0411713357695983
+            },
+            {
+              "touchpoint": "MAX",
+              "inversion": 365765.785000006,
+              "grps": 18.2574296295674,
+              "impactos_miles": 3180.57204347804,
+              "share_impactos": 0.0587524155610697,
+              "alcance": 0.0436641761991717
+            },
+            {
+              "touchpoint": "Disney",
+              "inversion": 432268.655000043,
+              "grps": 18.3803752836402,
+              "impactos_miles": 3201.99003703712,
+              "share_impactos": 0.0591480547231027,
+              "alcance": 0.0396774224802898
+            },
+            {
+              "touchpoint": "Pluto",
+              "inversion": 432268.654999983,
+              "grps": 22.5577333026459,
+              "impactos_miles": 3929.71504545403,
+              "share_impactos": 0.0725907944328875,
+              "alcance": 0.0293620249067
+            },
+            {
+              "touchpoint": "VIX",
+              "inversion": 532022.960000006,
+              "grps": 26.5562612793726,
+              "impactos_miles": 4626.28660869567,
+              "share_impactos": 0.0854580589979258,
+              "alcance": 0.0294774246754501
+            }
+          ],
+          "totales": {
+            "grps": 310.751982794474,
+            "impactos_miles": 54135.170666677,
+            "alcance": 0.423662186742546
+          }
+        },
+        {
+          "indice": 4,
+          "factor_presupuesto": 0.8,
+          "presupuesto_total": 3800163.99999979,
+          "por_touchpoint": [
+            {
+              "touchpoint": "YT_CTV",
+              "inversion": 570024.600000137,
+              "grps": 208.017213272767,
+              "impactos_miles": 36238.0546726088,
+              "share_impactos": 0.58572453818928,
+              "alcance": 0.263937175801253
+            },
+            {
+              "touchpoint": "Netflix",
+              "inversion": 646027.879999948,
+              "grps": 27.7325172007442,
+              "impactos_miles": 4831.19862399004,
+              "share_impactos": 0.078087844629148,
+              "alcance": 0.0696810805423213
+            },
+            {
+              "touchpoint": "Prime",
+              "inversion": 570024.599999968,
+              "grps": 21.3933361541657,
+              "impactos_miles": 3726.86891140875,
+              "share_impactos": 0.060238293466588,
+              "alcance": 0.0440286405055141
+            },
+            {
+              "touchpoint": "MAX",
+              "inversion": 418018.039999942,
+              "grps": 20.8656338623594,
+              "impactos_miles": 3634.93947826005,
+              "share_impactos": 0.0587524155610689,
+              "alcance": 0.0456847239338722
+            },
+            {
+              "touchpoint": "Disney",
+              "inversion": 494021.319999925,
+              "grps": 21.0061431812979,
+              "impactos_miles": 3659.41718518436,
+              "share_impactos": 0.0591480547230962,
+              "alcance": 0.0398496048280033
+            },
+            {
+              "touchpoint": "Pluto",
+              "inversion": 494021.319999929,
+              "grps": 25.7802666315926,
+              "impactos_miles": 4491.10290908985,
+              "share_impactos": 0.0725907944328902,
+              "alcance": 0.0296663131685097
+            },
+            {
+              "touchpoint": "VIX",
+              "inversion": 608026.239999942,
+              "grps": 30.3500128907083,
+              "impactos_miles": 5287.18469565162,
+              "share_impactos": 0.0854580589979288,
+              "alcance": 0.0297346468956956
+            }
+          ],
+          "totales": {
+            "grps": 355.145123193635,
+            "impactos_miles": 61868.7664761935,
+            "alcance": 0.435278410533099
+          }
+        },
+        {
+          "indice": 5,
+          "factor_presupuesto": 0.9,
+          "presupuesto_total": 4275184.49999979,
+          "por_touchpoint": [
+            {
+              "touchpoint": "YT_CTV",
+              "inversion": 641277.675000137,
+              "grps": 234.019364931856,
+              "impactos_miles": 40767.8115066839,
+              "share_impactos": 0.58572453818927,
+              "alcance": 0.266499483899638
+            },
+            {
+              "touchpoint": "Netflix",
+              "inversion": 726781.364999947,
+              "grps": 31.1990818508374,
+              "impactos_miles": 5435.09845198884,
+              "share_impactos": 0.0780878446291494,
+              "alcance": 0.0767867398618412
+            },
+            {
+              "touchpoint": "Prime",
+              "inversion": 641277.674999968,
+              "grps": 24.0675031734366,
+              "impactos_miles": 4192.72752533487,
+              "share_impactos": 0.0602382934665891,
+              "alcance": 0.0465408196658912
+            },
+            {
+              "touchpoint": "MAX",
+              "inversion": 470270.294999942,
+              "grps": 23.4738380951547,
+              "impactos_miles": 4089.30691304262,
+              "share_impactos": 0.0587524155610704,
+              "alcance": 0.0470845580335215
+            },
+            {
+              "touchpoint": "Disney",
+              "inversion": 555773.984999926,
+              "grps": 23.6319110789605,
+              "impactos_miles": 4116.84433333248,
+              "share_impactos": 0.059148054723098,
+              "alcance": 0.0399299585063121
+            },
+            {
+              "touchpoint": "Pluto",
+              "inversion": 555773.984999928,
+              "grps": 29.0027999605421,
+              "impactos_miles": 5052.49077272616,
+              "share_impactos": 0.0725907944328921,
+              "alcance": 0.029825903948689
+            },
+            {
+              "touchpoint": "VIX",
+              "inversion": 684029.519999942,
+              "grps": 34.1437645020472,
+              "impactos_miles": 5948.08278260814,
+              "share_impactos": 0.0854580589979306,
+              "alcance": 0.02986554911223
+            }
+          ],
+          "totales": {
+            "grps": 399.538263592835,
+            "impactos_miles": 69602.362285717,
+            "alcance": 0.444040127421991
+          }
+        },
+        {
+          "indice": 6,
+          "factor_presupuesto": 1.0,
+          "presupuesto_total": 4750204.99999979,
+          "por_touchpoint": [
+            {
+              "touchpoint": "YT_CTV",
+              "inversion": 712530.750000137,
+              "grps": 260.021516590946,
+              "impactos_miles": 45297.5683407589,
+              "share_impactos": 0.585724538189263,
+              "alcance": 0.267982834159458
+            },
+            {
+              "touchpoint": "Netflix",
+              "inversion": 807534.849999949,
+              "grps": 34.6656465009308,
+              "impactos_miles": 6038.99827998765,
+              "share_impactos": 0.0780878446291508,
+              "alcance": 0.0829585189528206
+            },
+            {
+              "touchpoint": "Prime",
+              "inversion": 712530.749999966,
+              "grps": 26.7416701927074,
+              "impactos_miles": 4658.58613926097,
+              "share_impactos": 0.0602382934665897,
+              "alcance": 0.0487668409960564
+            },
+            {
+              "touchpoint": "MAX",
+              "inversion": 522522.549999942,
+              "grps": 26.08204232795,
+              "impactos_miles": 4543.67434782519,
+              "share_impactos": 0.0587524155610716,
+              "alcance": 0.048041217022041
+            },
+            {
+              "touchpoint": "Disney",
+              "inversion": 617526.649999925,
+              "grps": 26.2576789766231,
+              "impactos_miles": 4574.27148148058,
+              "share_impactos": 0.0591480547230992,
+              "alcance": 0.0399674052272375
+            },
+            {
+              "touchpoint": "Pluto",
+              "inversion": 617526.649999928,
+              "grps": 32.2253332894917,
+              "impactos_miles": 5613.87863636247,
+              "share_impactos": 0.0725907944328937,
+              "alcance": 0.0299092813387665
+            },
+            {
+              "touchpoint": "VIX",
+              "inversion": 760032.799999942,
+              "grps": 37.9375161133861,
+              "impactos_miles": 6608.98086956466,
+              "share_impactos": 0.0854580589979321,
+              "alcance": 0.0299319441488695
+            }
+          ],
+          "totales": {
+            "grps": 443.931403992035,
+            "impactos_miles": 77335.9580952404,
+            "alcance": 0.450818494026971
+          }
+        },
+        {
+          "indice": 7,
+          "factor_presupuesto": 1.1,
+          "presupuesto_total": 5225225.50000016,
+          "por_touchpoint": [
+            {
+              "touchpoint": "YT_CTV",
+              "inversion": 783783.825000221,
+              "grps": 286.023668250066,
+              "impactos_miles": 49827.3251748392,
+              "share_impactos": 0.585724538189266,
+              "alcance": 0.268838959083328
+            },
+            {
+              "touchpoint": "Netflix",
+              "inversion": 888288.334999917,
+              "grps": 38.1322111510228,
+              "impactos_miles": 6642.89810798622,
+              "share_impactos": 0.0780878446291419,
+              "alcance": 0.0882037535993409
+            },
+            {
+              "touchpoint": "Prime",
+              "inversion": 783783.824999993,
+              "grps": 29.4158372119793,
+              "impactos_miles": 5124.44475318727,
+              "share_impactos": 0.0602382934665869,
+              "alcance": 0.0507529625504629
+            },
+            {
+              "touchpoint": "MAX",
+              "inversion": 574774.805000028,
+              "grps": 28.6902465607496,
+              "impactos_miles": 4998.04178260851,
+              "share_impactos": 0.0587524155610761,
+              "alcance": 0.0486889239406946
+            },
+            {
+              "touchpoint": "Disney",
+              "inversion": 679279.314999914,
+              "grps": 28.8834468742853,
+              "impactos_miles": 5031.69862962862,
+              "share_impactos": 0.0591480547230939,
+              "alcance": 0.0399848448811662
+            },
+            {
+              "touchpoint": "Pluto",
+              "inversion": 679279.315000053,
+              "grps": 35.4478666184477,
+              "impactos_miles": 6175.26649999992,
+              "share_impactos": 0.0725907944329016,
+              "alcance": 0.029952753294414
+            },
+            {
+              "touchpoint": "VIX",
+              "inversion": 836036.080000028,
+              "grps": 41.7312677247293,
+              "impactos_miles": 7269.87895652192,
+              "share_impactos": 0.0854580589979342,
+              "alcance": 0.0299655634141136
+            }
+          ],
+          "totales": {
+            "grps": 488.32454439128,
+            "impactos_miles": 85069.5539047717,
+            "alcance": 0.45616046661202
+          }
+        },
+        {
+          "indice": 8,
+          "factor_presupuesto": 1.2,
+          "presupuesto_total": 5700245.99999987,
+          "por_touchpoint": [
+            {
+              "touchpoint": "YT_CTV",
+              "inversion": 855036.899999952,
+              "grps": 312.025819909057,
+              "impactos_miles": 54357.0820088971,
+              "share_impactos": 0.585724538189185,
+              "alcance": 0.269332211077011
+            },
+            {
+              "touchpoint": "Netflix",
+              "inversion": 969041.819999987,
+              "grps": 41.598775801119,
+              "impactos_miles": 7246.79793598554,
+              "share_impactos": 0.0780878446291638,
+              "alcance": 0.0925797189910317
+            },
+            {
+              "touchpoint": "Prime",
+              "inversion": 855036.900000008,
+              "grps": 32.0900042312507,
+              "impactos_miles": 5590.30336711349,
+              "share_impactos": 0.0602382934666001,
+              "alcance": 0.0525359818640849
+            },
+            {
+              "touchpoint": "MAX",
+              "inversion": 627027.059999977,
+              "grps": 31.2984507935423,
+              "impactos_miles": 5452.40921739063,
+              "share_impactos": 0.0587524155610828,
+              "alcance": 0.049124684060575
+            },
+            {
+              "touchpoint": "Disney",
+              "inversion": 741031.979999983,
+              "grps": 31.5092147719509,
+              "impactos_miles": 5489.12577777725,
+              "share_impactos": 0.0591480547231119,
+              "alcance": 0.0399929643881682
+            },
+            {
+              "touchpoint": "Pluto",
+              "inversion": 741031.979999989,
+              "grps": 38.6703999473939,
+              "impactos_miles": 6736.65436363565,
+              "share_impactos": 0.0725907944329094,
+              "alcance": 0.029975395108264
+            },
+            {
+              "touchpoint": "VIX",
+              "inversion": 912039.359999976,
+              "grps": 45.5250193360656,
+              "impactos_miles": 7930.77704347799,
+              "share_impactos": 0.0854580589979463,
+              "alcance": 0.0299825719912262
+            }
+          ],
+          "totales": {
+            "grps": 532.71768479038,
+            "impactos_miles": 92803.1497142777,
+            "alcance": 0.460425463340143
+          }
+        },
+        {
+          "indice": 9,
+          "factor_presupuesto": 1.3,
+          "presupuesto_total": 6175266.50000016,
+          "por_touchpoint": [
+            {
+              "touchpoint": "YT_CTV",
+              "inversion": 926289.975000221,
+              "grps": 338.027971568245,
+              "impactos_miles": 58886.8388429893,
+              "share_impactos": 0.585724538189255,
+              "alcance": 0.269616108554628
+            },
+            {
+              "touchpoint": "Netflix",
+              "inversion": 1049795.30499992,
+              "grps": 45.0653404512093,
+              "impactos_miles": 7850.69776398383,
+              "share_impactos": 0.0780878446291449,
+              "alcance": 0.0961743998856846
+            },
+            {
+              "touchpoint": "Prime",
+              "inversion": 926289.974999993,
+              "grps": 34.764171250521,
+              "impactos_miles": 6056.16198103951,
+              "share_impactos": 0.0602382934665885,
+              "alcance": 0.054145536846276
+            },
+            {
+              "touchpoint": "MAX",
+              "inversion": 679279.315000028,
+              "grps": 33.9066550263402,
+              "impactos_miles": 5906.77665217365,
+              "share_impactos": 0.0587524155610771,
+              "alcance": 0.0494166033166516
+            },
+            {
+              "touchpoint": "Disney",
+              "inversion": 802784.644999914,
+              "grps": 34.1349826696106,
+              "impactos_miles": 5946.55292592485,
+              "share_impactos": 0.0591480547230965,
+              "alcance": 0.039996744110283
+            },
+            {
+              "touchpoint": "Pluto",
+              "inversion": 802784.645000053,
+              "grps": 41.8929332763468,
+              "impactos_miles": 7298.04222727255,
+              "share_impactos": 0.0725907944329025,
+              "alcance": 0.0299871813192055
+            },
+            {
+              "touchpoint": "VIX",
+              "inversion": 988042.640000029,
+              "grps": 49.3187709474071,
+              "impactos_miles": 8591.67513043495,
+              "share_impactos": 0.0854580589979359,
+              "alcance": 0.0299911731919794
+            }
+          ],
+          "totales": {
+            "grps": 577.11082518968,
+            "impactos_miles": 100536.745523819,
+            "alcance": 0.463862441716316
+          }
+        },
+        {
+          "indice": 10,
+          "factor_presupuesto": 1.4,
+          "presupuesto_total": 6650287.00000016,
+          "por_touchpoint": [
+            {
+              "touchpoint": "YT_CTV",
+              "inversion": 997543.050000221,
+              "grps": 364.030123227335,
+              "impactos_miles": 63416.5956770643,
+              "share_impactos": 0.58572453818925,
+              "alcance": 0.269779414305319
+            },
+            {
+              "touchpoint": "Netflix",
+              "inversion": 1130548.78999992,
+              "grps": 48.5319051013026,
+              "impactos_miles": 8454.59759198263,
+              "share_impactos": 0.0780878446291461,
+              "alcance": 0.09908992605182
+            },
+            {
+              "touchpoint": "Prime",
+              "inversion": 997543.049999993,
+              "grps": 37.4383382697918,
+              "impactos_miles": 6522.02059496563,
+              "share_impactos": 0.0602382934665891,
+              "alcance": 0.0556057663028591
+            },
+            {
+              "touchpoint": "MAX",
+              "inversion": 731531.570000029,
+              "grps": 36.5148592591355,
+              "impactos_miles": 6361.14408695622,
+              "share_impactos": 0.0587524155610775,
+              "alcance": 0.0496116036407741
+            },
+            {
+              "touchpoint": "Disney",
+              "inversion": 864537.309999914,
+              "grps": 36.7607505672732,
+              "impactos_miles": 6403.98007407296,
+              "share_impactos": 0.0591480547230975,
+              "alcance": 0.0399985034974185
+            },
+            {
+              "touchpoint": "Pluto",
+              "inversion": 864537.310000053,
+              "grps": 45.1154666052963,
+              "impactos_miles": 7859.43009090886,
+              "share_impactos": 0.0725907944329029,
+              "alcance": 0.0299933148811102
+            },
+            {
+              "touchpoint": "VIX",
+              "inversion": 1064045.92000003,
+              "grps": 53.112522558746,
+              "impactos_miles": 9252.57321739147,
+              "share_impactos": 0.0854580589979365,
+              "alcance": 0.0299955218451094
+            }
+          ],
+          "totales": {
+            "grps": 621.50396558888,
+            "impactos_miles": 108270.341333342,
+            "alcance": 0.466652401702667
+          }
+        },
+        {
+          "indice": 11,
+          "factor_presupuesto": 1.5,
+          "presupuesto_total": 7125307.50000015,
+          "por_touchpoint": [
+            {
+              "touchpoint": "YT_CTV",
+              "inversion": 1068796.12500022,
+              "grps": 390.032274886424,
+              "impactos_miles": 67946.3525111393,
+              "share_impactos": 0.585724538189247,
+              "alcance": 0.269873320884775
+            },
+            {
+              "touchpoint": "Netflix",
+              "inversion": 1211302.27499992,
+              "grps": 51.9984697513959,
+              "impactos_miles": 9058.49741998143,
+              "share_impactos": 0.0780878446291471,
+              "alcance": 0.101430288242749
+            },
+            {
+              "touchpoint": "Prime",
+              "inversion": 1068796.12499999,
+              "grps": 40.1125052890627,
+              "impactos_miles": 6987.87920889174,
+              "share_impactos": 0.0602382934665896,
+              "alcance": 0.056936528797835
+            },
+            {
+              "touchpoint": "MAX",
+              "inversion": 783783.825000028,
+              "grps": 39.1230634919308,
+              "impactos_miles": 6815.51152173878,
+              "share_impactos": 0.0587524155610778,
+              "alcance": 0.0497416138421679
+            },
+            {
+              "touchpoint": "Disney",
+              "inversion": 926289.974999913,
+              "grps": 39.3865184649358,
+              "impactos_miles": 6861.40722222107,
+              "share_impactos": 0.0591480547230984,
+              "alcance": 0.0399993224327468
+            },
+            {
+              "touchpoint": "Pluto",
+              "inversion": 926289.975000053,
+              "grps": 48.3379999342459,
+              "impactos_miles": 8420.81795454517,
+              "share_impactos": 0.0725907944329032,
+              "alcance": 0.0299965063199599
+            },
+            {
+              "touchpoint": "VIX",
+              "inversion": 1140049.20000003,
+              "grps": 56.9062741700849,
+              "impactos_miles": 9913.47130434798,
+              "share_impactos": 0.0854580589979371,
+              "alcance": 0.0299977202222851
+            }
+          ],
+          "totales": {
+            "grps": 665.89710598808,
+            "impactos_miles": 116003.937142865,
+            "alcance": 0.468931893056132
+          }
+        }
+      ],
+      "validaciones": [
+        {
+          "regla": "escenarios_ancho",
+          "nivel": "ok",
+          "mensaje": "ancho 40 = 5 + 5*7",
+          "detalle": []
+        },
+        {
+          "regla": "escenarios_orden",
+          "nivel": "ok",
+          "mensaje": "orden de touchpoints resuelto cruzando valores con Media Mix table",
+          "detalle": []
+        },
+        {
+          "regla": "inversion_vs_total",
+          "nivel": "ok",
+          "mensaje": "la suma por touchpoint cuadra con el total",
+          "detalle": []
+        },
+        {
+          "regla": "inversion_vs_presupuesto",
+          "nivel": "ok",
+          "mensaje": "la suma por touchpoint cuadra con el presupuesto del Exercise",
+          "detalle": []
+        },
+        {
+          "regla": "share_inversion_suma_1",
+          "nivel": "ok",
+          "mensaje": "share_inversion suma 1",
+          "detalle": []
+        },
+        {
+          "regla": "share_impactos_suma_1",
+          "nivel": "ok",
+          "mensaje": "share_impactos suma 1",
+          "detalle": []
+        },
+        {
+          "regla": "grps_vs_total",
+          "nivel": "ok",
+          "mensaje": "la suma de GRPs cuadra con el total",
+          "detalle": []
+        },
+        {
+          "regla": "impactos_vs_grps_universo",
+          "nivel": "ok",
+          "mensaje": "impactos_miles ≈ grps * universo / 100 / 1000",
+          "detalle": []
+        },
+        {
+          "regla": "alcance_x_frecuencia_vs_grps",
+          "nivel": "ok",
+          "mensaje": "alcance * frecuencia ≈ grps / 100",
+          "detalle": []
+        },
+        {
+          "regla": "alcance_neto_rango",
+          "nivel": "ok",
+          "mensaje": "el alcance neto está entre el mayor individual y la suma",
+          "detalle": []
+        },
+        {
+          "regla": "rf_decreciente",
+          "nivel": "ok",
+          "mensaje": "todas las series 1+ a 10+ son decrecientes",
+          "detalle": []
+        },
+        {
+          "regla": "alcance_mmt_vs_rf_1mas",
+          "nivel": "ok",
+          "mensaje": "el alcance de Media Mix coincide con 1+ de Reach & Frequency",
+          "detalle": []
+        },
+        {
+          "regla": "cpgrp_vs_inversion_grps",
+          "nivel": "ok",
+          "mensaje": "CPGRP ≈ inversión / GRPs",
+          "detalle": []
+        },
+        {
+          "regla": "cpm_vs_inversion_impactos",
+          "nivel": "ok",
+          "mensaje": "CPM ≈ inversión / (impactos_miles * 1000) * 1000",
+          "detalle": []
+        },
+        {
+          "regla": "totales_vs_plan_cost",
+          "nivel": "ok",
+          "mensaje": "los totales coinciden con Plan Cost table",
+          "detalle": []
+        },
+        {
+          "regla": "touchpoints_en_todas_las_hojas",
+          "nivel": "ok",
+          "mensaje": "cada touchpoint del mix aparece en todas las hojas",
+          "detalle": []
+        },
+        {
+          "regla": "restricciones_forzadas",
+          "nivel": "warning",
+          "mensaje": "7 touchpoint(s) con mínimo = máximo: el mix venía forzado, el optimizador no optimizó",
+          "detalle": [
+            "Netflix: 17",
+            "VIX: 16",
+            "YT_CTV: 15",
+            "Prime: 15",
+            "Pluto: 13",
+            "Disney: 13",
+            "MAX: 11"
+          ]
+        },
+        {
+          "regla": "duplicaciones_default",
+          "nivel": "warning",
+          "mensaje": "los 21 índices de duplicación valen 100 (valor por defecto)",
+          "detalle": []
+        },
+        {
+          "regla": "escenarios_share_total_1",
+          "nivel": "ok",
+          "mensaje": "share total = 1 en todos los escenarios",
+          "detalle": []
+        },
+        {
+          "regla": "escenarios_factor_rango",
+          "nivel": "ok",
+          "mensaje": "factores de presupuesto entre 0.5 y 1.5 (0.5 a 1.5)",
+          "detalle": []
+        }
+      ]
+    },
+    {
+      "id": "spectrum-1",
+      "origen": "real",
+      "fuente_archivo": "alcance spectrum.xlsx + asignación de presupuesto spectrum.xlsx",
+      "herramienta": "spectrum",
+      "subtipo": "allocation",
+      "exercise": {
+        "pais": null,
+        "industria": null,
+        "anunciante": "Department Stores",
+        "marca": null,
+        "campana": "Plan 1 Net Reach",
+        "periodo_inicio": null,
+        "periodo_fin": null,
+        "presupuesto": null,
+        "moneda": null,
+        "target": "Personas 25-45 ABC+C",
+        "target_descripcion": null,
+        "genero": null,
+        "edad_min": 25,
+        "edad_max": 45,
+        "universo": null,
+        "semanas": 4
+      },
+      "touchpoints": [
+        {
+          "nombre": "TV",
+          "color": null,
+          "inversion": 19607967.456742458,
+          "share_inversion": null,
+          "grps": null,
+          "impactos_miles": null,
+          "share_impactos": null,
+          "alcance": 0.5479607642039259,
+          "frecuencia": null,
+          "costo_por_punto_alcance": null,
+          "cpgrp": null,
+          "cpm": null,
+          "cpgrp_input": null,
+          "cpm_input": null,
+          "restriccion_min": null,
+          "restriccion_max": null,
+          "curva": null
+        },
+        {
+          "nombre": "Radio",
+          "color": null,
+          "inversion": 7296426.542566167,
+          "share_inversion": null,
+          "grps": null,
+          "impactos_miles": null,
+          "share_impactos": null,
+          "alcance": 0.48299279113818133,
+          "frecuencia": null,
+          "costo_por_punto_alcance": null,
+          "cpgrp": null,
+          "cpm": null,
+          "cpgrp_input": null,
+          "cpm_input": null,
+          "restriccion_min": null,
+          "restriccion_max": null,
+          "curva": null
+        },
+        {
+          "nombre": "Outdoor",
+          "color": null,
+          "inversion": 3499934.226246312,
+          "share_inversion": null,
+          "grps": null,
+          "impactos_miles": null,
+          "share_impactos": null,
+          "alcance": 0.1377538713172082,
+          "frecuencia": null,
+          "costo_por_punto_alcance": null,
+          "cpgrp": null,
+          "cpm": null,
+          "cpgrp_input": null,
+          "cpm_input": null,
+          "restriccion_min": null,
+          "restriccion_max": null,
+          "curva": null
+        },
+        {
+          "nombre": "Ads SM",
+          "color": null,
+          "inversion": 8963896.842859084,
+          "share_inversion": null,
+          "grps": null,
+          "impactos_miles": null,
+          "share_impactos": null,
+          "alcance": 0.5732488781865644,
+          "frecuencia": null,
+          "costo_por_punto_alcance": null,
+          "cpgrp": null,
+          "cpm": null,
+          "cpgrp_input": null,
+          "cpm_input": null,
+          "restriccion_min": null,
+          "restriccion_max": null,
+          "curva": null
+        },
+        {
+          "nombre": "Video Sharing Platforms",
+          "color": null,
+          "inversion": 10631774.931585982,
+          "share_inversion": null,
+          "grps": null,
+          "impactos_miles": null,
+          "share_impactos": null,
+          "alcance": 0.551514033533304,
+          "frecuencia": null,
+          "costo_por_punto_alcance": null,
+          "cpgrp": null,
+          "cpm": null,
+          "cpgrp_input": null,
+          "cpm_input": null,
+          "restriccion_min": null,
+          "restriccion_max": null,
+          "curva": null
+        }
+      ],
+      "totales": {
+        "inversion": null,
+        "grps": null,
+        "impactos_miles": null,
+        "alcance_neto": null,
+        "frecuencia": null,
+        "costo_por_punto_alcance": null,
+        "cpgrp": null,
+        "cpm": null
+      },
+      "alcance_por_frecuencia": null,
+      "duplicaciones": null,
+      "escenarios": null,
+      "validaciones": [
+        {
+          "regla": "titulo_spectrum",
+          "nivel": "warning",
+          "mensaje": "3 campo(s) del título no identificados, quedan en null",
+          "detalle": [
+            "sin anunciante",
+            "sin target",
+            "sin semanas"
+          ]
+        }
+      ]
+    }
+  ],
+  "flow": {
+    "origen": "real",
+    "fuente_archivo": "Flow_Anonimizado_1.xlsx",
+    "calendario": [
+      {
+        "semana": 1,
+        "fecha": "2024-12-30",
+        "columna": "G",
+        "mes": "ENERO",
+        "trimestre": "1Q"
+      },
+      {
+        "semana": 2,
+        "fecha": "2025-01-06",
+        "columna": "H",
+        "mes": "ENERO",
+        "trimestre": "1Q"
+      },
+      {
+        "semana": 3,
+        "fecha": "2025-01-13",
+        "columna": "I",
+        "mes": "ENERO",
+        "trimestre": "1Q"
+      },
+      {
+        "semana": 4,
+        "fecha": "2025-01-20",
+        "columna": "J",
+        "mes": "ENERO",
+        "trimestre": "1Q"
+      },
+      {
+        "semana": 5,
+        "fecha": "2025-01-27",
+        "columna": "K",
+        "mes": "ENERO",
+        "trimestre": "1Q"
+      },
+      {
+        "semana": 6,
+        "fecha": "2025-02-03",
+        "columna": "L",
+        "mes": "FEBRERO",
+        "trimestre": "1Q"
+      },
+      {
+        "semana": 7,
+        "fecha": "2025-02-10",
+        "columna": "M",
+        "mes": "FEBRERO",
+        "trimestre": "1Q"
+      },
+      {
+        "semana": 8,
+        "fecha": "2025-02-17",
+        "columna": "N",
+        "mes": "FEBRERO",
+        "trimestre": "1Q"
+      },
+      {
+        "semana": 9,
+        "fecha": "2025-02-24",
+        "columna": "O",
+        "mes": "FEBRERO",
+        "trimestre": "1Q"
+      },
+      {
+        "semana": 10,
+        "fecha": "2025-03-03",
+        "columna": "P",
+        "mes": "MARZO",
+        "trimestre": "1Q"
+      },
+      {
+        "semana": 11,
+        "fecha": "2025-03-10",
+        "columna": "Q",
+        "mes": "MARZO",
+        "trimestre": "1Q"
+      },
+      {
+        "semana": 12,
+        "fecha": "2025-03-17",
+        "columna": "R",
+        "mes": "MARZO",
+        "trimestre": "1Q"
+      },
+      {
+        "semana": 13,
+        "fecha": "2025-03-24",
+        "columna": "S",
+        "mes": "MARZO",
+        "trimestre": "1Q"
+      },
+      {
+        "semana": 14,
+        "fecha": "2025-03-31",
+        "columna": "T",
+        "mes": "MARZO",
+        "trimestre": "1Q"
+      },
+      {
+        "semana": 15,
+        "fecha": "2025-04-07",
+        "columna": "U",
+        "mes": "ABRIL",
+        "trimestre": "2Q"
+      },
+      {
+        "semana": 16,
+        "fecha": "2025-04-14",
+        "columna": "V",
+        "mes": "ABRIL",
+        "trimestre": "2Q"
+      },
+      {
+        "semana": 17,
+        "fecha": "2025-04-21",
+        "columna": "W",
+        "mes": "ABRIL",
+        "trimestre": "2Q"
+      },
+      {
+        "semana": 18,
+        "fecha": "2025-04-28",
+        "columna": "X",
+        "mes": "ABRIL",
+        "trimestre": "2Q"
+      },
+      {
+        "semana": 19,
+        "fecha": "2025-05-05",
+        "columna": "Y",
+        "mes": "MAYO",
+        "trimestre": "2Q"
+      },
+      {
+        "semana": 20,
+        "fecha": "2025-05-12",
+        "columna": "Z",
+        "mes": "MAYO",
+        "trimestre": "2Q"
+      },
+      {
+        "semana": 21,
+        "fecha": "2025-05-19",
+        "columna": "AA",
+        "mes": "MAYO",
+        "trimestre": "2Q"
+      },
+      {
+        "semana": 22,
+        "fecha": "2025-05-26",
+        "columna": "AB",
+        "mes": "MAYO",
+        "trimestre": "2Q"
+      },
+      {
+        "semana": 23,
+        "fecha": "2025-06-02",
+        "columna": "AC",
+        "mes": "JUNIO",
+        "trimestre": "2Q"
+      },
+      {
+        "semana": 24,
+        "fecha": "2025-06-09",
+        "columna": "AD",
+        "mes": "JUNIO",
+        "trimestre": "2Q"
+      },
+      {
+        "semana": 25,
+        "fecha": "2025-06-16",
+        "columna": "AE",
+        "mes": "JUNIO",
+        "trimestre": "2Q"
+      },
+      {
+        "semana": 26,
+        "fecha": "2025-06-23",
+        "columna": "AF",
+        "mes": "JUNIO",
+        "trimestre": "2Q"
+      },
+      {
+        "semana": 27,
+        "fecha": "2025-06-30",
+        "columna": "AG",
+        "mes": "JUNIO",
+        "trimestre": "2Q"
+      },
+      {
+        "semana": 28,
+        "fecha": "2025-07-07",
+        "columna": "AH",
+        "mes": "JULIO",
+        "trimestre": "3Q"
+      },
+      {
+        "semana": 29,
+        "fecha": "2025-07-14",
+        "columna": "AI",
+        "mes": "JULIO",
+        "trimestre": "3Q"
+      },
+      {
+        "semana": 30,
+        "fecha": "2025-07-21",
+        "columna": "AJ",
+        "mes": "JULIO",
+        "trimestre": "3Q"
+      },
+      {
+        "semana": 31,
+        "fecha": "2025-07-28",
+        "columna": "AK",
+        "mes": "JULIO",
+        "trimestre": "3Q"
+      },
+      {
+        "semana": 32,
+        "fecha": "2025-08-04",
+        "columna": "AL",
+        "mes": "AGOSTO",
+        "trimestre": "3Q"
+      },
+      {
+        "semana": 33,
+        "fecha": "2025-08-11",
+        "columna": "AM",
+        "mes": "AGOSTO",
+        "trimestre": "3Q"
+      },
+      {
+        "semana": 34,
+        "fecha": "2025-08-18",
+        "columna": "AN",
+        "mes": "AGOSTO",
+        "trimestre": "3Q"
+      },
+      {
+        "semana": 35,
+        "fecha": "2025-08-25",
+        "columna": "AO",
+        "mes": "AGOSTO",
+        "trimestre": "3Q"
+      },
+      {
+        "semana": 36,
+        "fecha": "2025-09-01",
+        "columna": "AP",
+        "mes": "SEPTIEMBRE",
+        "trimestre": "3Q"
+      },
+      {
+        "semana": 37,
+        "fecha": "2025-09-08",
+        "columna": "AQ",
+        "mes": "SEPTIEMBRE",
+        "trimestre": "3Q"
+      },
+      {
+        "semana": 38,
+        "fecha": "2025-09-15",
+        "columna": "AR",
+        "mes": "SEPTIEMBRE",
+        "trimestre": "3Q"
+      },
+      {
+        "semana": 39,
+        "fecha": "2025-09-22",
+        "columna": "AS",
+        "mes": "SEPTIEMBRE",
+        "trimestre": "3Q"
+      },
+      {
+        "semana": 40,
+        "fecha": "2025-09-29",
+        "columna": "AT",
+        "mes": "SEPTIEMBRE",
+        "trimestre": "3Q"
+      },
+      {
+        "semana": 41,
+        "fecha": "2025-10-06",
+        "columna": "AU",
+        "mes": "OCTUBRE",
+        "trimestre": "4Q"
+      },
+      {
+        "semana": 42,
+        "fecha": "2025-10-13",
+        "columna": "AV",
+        "mes": "OCTUBRE",
+        "trimestre": "4Q"
+      },
+      {
+        "semana": 43,
+        "fecha": "2025-10-20",
+        "columna": "AW",
+        "mes": "OCTUBRE",
+        "trimestre": "4Q"
+      },
+      {
+        "semana": 44,
+        "fecha": "2025-10-27",
+        "columna": "AX",
+        "mes": "OCTUBRE",
+        "trimestre": "4Q"
+      },
+      {
+        "semana": 45,
+        "fecha": "2025-11-03",
+        "columna": "AY",
+        "mes": "NOVIEMBRE",
+        "trimestre": "4Q"
+      },
+      {
+        "semana": 46,
+        "fecha": "2025-11-10",
+        "columna": "AZ",
+        "mes": "NOVIEMBRE",
+        "trimestre": "4Q"
+      },
+      {
+        "semana": 47,
+        "fecha": "2025-11-17",
+        "columna": "BA",
+        "mes": "NOVIEMBRE",
+        "trimestre": "4Q"
+      },
+      {
+        "semana": 48,
+        "fecha": "2025-11-24",
+        "columna": "BB",
+        "mes": "NOVIEMBRE",
+        "trimestre": "4Q"
+      },
+      {
+        "semana": 49,
+        "fecha": "2025-12-01",
+        "columna": "BC",
+        "mes": "DICIEMBRE",
+        "trimestre": "4Q"
+      },
+      {
+        "semana": 50,
+        "fecha": "2025-12-08",
+        "columna": "BD",
+        "mes": "DICIEMBRE",
+        "trimestre": "4Q"
+      },
+      {
+        "semana": 51,
+        "fecha": "2025-12-15",
+        "columna": "BE",
+        "mes": "DICIEMBRE",
+        "trimestre": "4Q"
+      },
+      {
+        "semana": 52,
+        "fecha": "2025-12-22",
+        "columna": "BF",
+        "mes": "DICIEMBRE",
+        "trimestre": "4Q"
+      },
+      {
+        "semana": 53,
+        "fecha": "2025-12-29",
+        "columna": "BG",
+        "mes": "DICIEMBRE",
+        "trimestre": "4Q"
+      }
+    ],
+    "medios": [
+      "Cine",
+      "Digital",
+      "OOH",
+      "Radio",
+      "TV Abierta",
+      "Tv Local",
+      "Tv Paga"
+    ],
+    "campanas": [
+      {
+        "id": "celebrando-la-neta",
+        "categoria": "CORE",
+        "campana": "CELEBRANDO + LA NETA",
+        "medios": [
+          {
+            "medio": "TV Abierta",
+            "inversion_total": 71894114.768234,
+            "patron_normalizado": "MANT | MIN",
+            "niveles": null
+          },
+          {
+            "medio": "Tv Paga",
+            "inversion_total": 11478161.370745,
+            "patron_normalizado": null,
+            "niveles": null
+          },
+          {
+            "medio": "Digital",
+            "inversion_total": 31380318.474248,
+            "patron_normalizado": "MANT | LANZ | MANT | MANT",
+            "niveles": null
+          },
+          {
+            "medio": "OOH",
+            "inversion_total": 21071005.512102,
+            "patron_normalizado": null,
+            "niveles": null
+          }
+        ]
+      },
+      {
+        "id": "cama-fresca-spin-off",
+        "categoria": "CORE",
+        "campana": "CAMA FRESCA SPIN OFF",
+        "medios": [
+          {
+            "medio": "TV Abierta",
+            "inversion_total": 41270909.08059,
+            "patron_normalizado": "MANT",
+            "niveles": null
+          },
+          {
+            "medio": "Tv Paga",
+            "inversion_total": 5810842.130001,
+            "patron_normalizado": null,
+            "niveles": null
+          },
+          {
+            "medio": "Digital",
+            "inversion_total": 8752333.851545,
+            "patron_normalizado": null,
+            "niveles": null
+          },
+          {
+            "medio": "OOH",
+            "inversion_total": 28040480.871755,
+            "patron_normalizado": null,
+            "niveles": null
+          },
+          {
+            "medio": "Cine",
+            "inversion_total": 1674566.0,
+            "patron_normalizado": null,
+            "niveles": null
+          }
+        ]
+      },
+      {
+        "id": "nova-xs",
+        "categoria": "CORE",
+        "campana": "NOVA XS",
+        "medios": [
+          {
+            "medio": "TV Abierta",
+            "inversion_total": 94582496.46264,
+            "patron_normalizado": "MANT | LANZ | MIN",
+            "niveles": null
+          },
+          {
+            "medio": "Tv Paga",
+            "inversion_total": 16095003.258917,
+            "patron_normalizado": null,
+            "niveles": null
+          },
+          {
+            "medio": "Digital",
+            "inversion_total": 25568459.110651,
+            "patron_normalizado": "MANT | MANT | MANT",
+            "niveles": null
+          },
+          {
+            "medio": "OOH",
+            "inversion_total": 14112893.398107,
+            "patron_normalizado": "MIN",
+            "niveles": null
+          }
+        ]
+      },
+      {
+        "id": "pel-cula",
+        "categoria": "CORE",
+        "campana": "PELÍCULA",
+        "medios": [
+          {
+            "medio": "TV Abierta",
+            "inversion_total": 59497184.256936,
+            "patron_normalizado": "MANT | LANZ | MANT",
+            "niveles": null
+          },
+          {
+            "medio": "Tv Paga",
+            "inversion_total": 8264197.871846,
+            "patron_normalizado": null,
+            "niveles": null
+          },
+          {
+            "medio": "Digital",
+            "inversion_total": 18460997.728091,
+            "patron_normalizado": "MANT | MANT | MANT",
+            "niveles": null
+          },
+          {
+            "medio": "OOH",
+            "inversion_total": 22385251.170922,
+            "patron_normalizado": "MANT",
+            "niveles": null
+          },
+          {
+            "medio": "Radio",
+            "inversion_total": 217697.0,
+            "patron_normalizado": null,
+            "niveles": null
+          }
+        ]
+      },
+      {
+        "id": "nova-alfa",
+        "categoria": "CORE",
+        "campana": "NOVA ALFA",
+        "medios": [
+          {
+            "medio": "TV Abierta",
+            "inversion_total": 14700600.49,
+            "patron_normalizado": null,
+            "niveles": null
+          },
+          {
+            "medio": "Tv Paga",
+            "inversion_total": 3075477.39647,
+            "patron_normalizado": null,
+            "niveles": null
+          },
+          {
+            "medio": "Digital",
+            "inversion_total": 12266573.671766,
+            "patron_normalizado": "MANT | MANT | MANT",
+            "niveles": null
+          },
+          {
+            "medio": "OOH",
+            "inversion_total": 5916720.316216,
+            "patron_normalizado": null,
+            "niveles": null
+          },
+          {
+            "medio": "Cine",
+            "inversion_total": 737512.0,
+            "patron_normalizado": null,
+            "niveles": null
+          }
+        ]
+      },
+      {
+        "id": "pulse",
+        "categoria": "CORE",
+        "campana": "PULSE",
+        "medios": [
+          {
+            "medio": "Digital",
+            "inversion_total": 2096961.105502,
+            "patron_normalizado": "MANT | MANT",
+            "niveles": null
+          }
+        ]
+      },
+      {
+        "id": "t-cticas-sw-ddlm-ddp-edificio-alfa",
+        "categoria": "CORE",
+        "campana": "TÁCTICAS (SW, DDLM, DDP, EDIFICIO ALFA)",
+        "medios": [
+          {
+            "medio": "TV Abierta",
+            "inversion_total": 9268939.21221,
+            "patron_normalizado": null,
+            "niveles": null
+          },
+          {
+            "medio": "Digital",
+            "inversion_total": 19800899.724785,
+            "patron_normalizado": null,
+            "niveles": null
+          },
+          {
+            "medio": "OOH",
+            "inversion_total": 1313549.0,
+            "patron_normalizado": null,
+            "niveles": null
+          }
+        ]
+      },
+      {
+        "id": "zen-nova",
+        "categoria": "ZEN",
+        "campana": "ZEN NOVA",
+        "medios": [
+          {
+            "medio": "TV Abierta",
+            "inversion_total": 88992917.454572,
+            "patron_normalizado": "LANZ | MANT | MANT",
+            "niveles": {
+              "lanzamiento": 188,
+              "mantenimiento": 142,
+              "minimo": 99
+            }
+          },
+          {
+            "medio": "Tv Paga",
+            "inversion_total": 12516276.162274,
+            "patron_normalizado": null,
+            "niveles": {
+              "lanzamiento": 188,
+              "mantenimiento": 142,
+              "minimo": 99
+            }
+          },
+          {
+            "medio": "Tv Local",
+            "inversion_total": 2662357.5858,
+            "patron_normalizado": null,
+            "niveles": {
+              "lanzamiento": 188,
+              "mantenimiento": 142,
+              "minimo": 99
+            }
+          },
+          {
+            "medio": "Digital",
+            "inversion_total": 17758679.129631,
+            "patron_normalizado": "LANZ | MANT | MANT | MANT",
+            "niveles": {
+              "lanzamiento": 188,
+              "mantenimiento": 142,
+              "minimo": 99
+            }
+          },
+          {
+            "medio": "OOH",
+            "inversion_total": 4411043.157158,
+            "patron_normalizado": null,
+            "niveles": {
+              "lanzamiento": 188,
+              "mantenimiento": 142,
+              "minimo": 99
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "marcas": [
+    {
+      "id": "marca-streaming",
+      "nombre": "Cuenta Streaming (Smart Planner v2)",
+      "origen": "real",
+      "ejercicio_id": "sp-v2",
+      "presupuesto": 4750205
+    },
+    {
+      "id": "marca-multimedia",
+      "nombre": "Cuenta Multimedia (Smart Planner v1)",
+      "origen": "real",
+      "ejercicio_id": "sp-v1",
+      "presupuesto": 50000000
+    },
+    {
+      "id": "marca-department-stores",
+      "nombre": "Department Stores (Spectrum)",
+      "origen": "real",
+      "ejercicio_id": "spectrum-1",
+      "presupuesto": 50000000.0
+    },
+    {
+      "id": "marca-sim-aliada",
+      "nombre": "Cuenta Aliada",
+      "origen": "simulado",
+      "basado_en_ejercicio_id": "sp-v2",
+      "factor_vs_base": 0.564,
+      "presupuesto": 2679116
+    },
+    {
+      "id": "marca-sim-norte",
+      "nombre": "Cuenta Norte",
+      "origen": "simulado",
+      "basado_en_ejercicio_id": "sp-v2",
+      "factor_vs_base": 0.652,
+      "presupuesto": 3097134
+    },
+    {
+      "id": "marca-sim-sur",
+      "nombre": "Cuenta Sur",
+      "origen": "simulado",
+      "basado_en_ejercicio_id": "sp-v2",
+      "factor_vs_base": 0.534,
+      "presupuesto": 2536609
+    }
+  ],
+  "versiones": [
+    {
+      "id": "v-base",
+      "origen": "simulado",
+      "ejercicio_base_id": "sp-v2",
+      "etiqueta": "Base aprobada",
+      "motivo": "Plan original enviado a cliente",
+      "autor": "Planeación",
+      "rol": "planner",
+      "fecha": "2026-08-30",
+      "hora": "15:30",
+      "estado": "aprobada",
+      "factor_presupuesto": 1.0,
+      "delta_inversion": -2.0954757928848267e-07,
+      "snapshot_touchpoints": [
+        {
+          "nombre": "YT_CTV",
+          "inversion": 712530.750000137
+        },
+        {
+          "nombre": "Netflix",
+          "inversion": 807534.849999949
+        },
+        {
+          "nombre": "Prime",
+          "inversion": 712530.749999966
+        },
+        {
+          "nombre": "MAX",
+          "inversion": 522522.549999942
+        },
+        {
+          "nombre": "Disney",
+          "inversion": 617526.649999925
+        },
+        {
+          "nombre": "Pluto",
+          "inversion": 617526.649999928
+        },
+        {
+          "nombre": "VIX",
+          "inversion": 760032.799999942
+        }
+      ],
+      "interpolado": {
+        "factor_presupuesto": 1.0,
+        "presupuesto_total": 4750204.99999979,
+        "por_touchpoint": [
+          {
+            "touchpoint": "YT_CTV",
+            "inversion": 712530.750000137,
+            "grps": 260.021516590946,
+            "impactos_miles": 45297.5683407589,
+            "alcance": 0.267982834159458
+          },
+          {
+            "touchpoint": "Netflix",
+            "inversion": 807534.849999949,
+            "grps": 34.6656465009308,
+            "impactos_miles": 6038.99827998765,
+            "alcance": 0.0829585189528206
+          },
+          {
+            "touchpoint": "Prime",
+            "inversion": 712530.749999966,
+            "grps": 26.7416701927074,
+            "impactos_miles": 4658.58613926097,
+            "alcance": 0.0487668409960564
+          },
+          {
+            "touchpoint": "MAX",
+            "inversion": 522522.549999942,
+            "grps": 26.08204232795,
+            "impactos_miles": 4543.67434782519,
+            "alcance": 0.048041217022041
+          },
+          {
+            "touchpoint": "Disney",
+            "inversion": 617526.649999925,
+            "grps": 26.2576789766231,
+            "impactos_miles": 4574.27148148058,
+            "alcance": 0.0399674052272375
+          },
+          {
+            "touchpoint": "Pluto",
+            "inversion": 617526.649999928,
+            "grps": 32.2253332894917,
+            "impactos_miles": 5613.87863636247,
+            "alcance": 0.0299092813387665
+          },
+          {
+            "touchpoint": "VIX",
+            "inversion": 760032.799999942,
+            "grps": 37.9375161133861,
+            "impactos_miles": 6608.98086956466,
+            "alcance": 0.0299319441488695
+          }
+        ],
+        "totales": {
+          "grps": 443.931403992035,
+          "impactos_miles": 77335.9580952404,
+          "alcance": 0.450818494026971
+        }
+      }
+    },
+    {
+      "id": "v-cambio-a",
+      "origen": "simulado",
+      "ejercicio_base_id": "sp-v2",
+      "etiqueta": "Cambio A · +15% presupuesto",
+      "motivo": "Cliente pidió reforzar alcance en el cierre de mes",
+      "autor": "Planeación",
+      "rol": "planner",
+      "fecha": "2026-09-23",
+      "hora": "15:30",
+      "estado": "pendiente",
+      "factor_presupuesto": 1.15,
+      "delta_inversion": 712530.750000014,
+      "snapshot_touchpoints": [
+        {
+          "nombre": "YT_CTV",
+          "inversion": 819410.3625000864
+        },
+        {
+          "nombre": "Netflix",
+          "inversion": 928665.0774999519
+        },
+        {
+          "nombre": "Prime",
+          "inversion": 819410.3625000004
+        },
+        {
+          "nombre": "MAX",
+          "inversion": 600900.9325000024
+        },
+        {
+          "nombre": "Disney",
+          "inversion": 710155.6474999484
+        },
+        {
+          "nombre": "Pluto",
+          "inversion": 710155.6475000209
+        },
+        {
+          "nombre": "VIX",
+          "inversion": 874037.720000002
+        }
+      ],
+      "interpolado": {
+        "factor_presupuesto": 1.15,
+        "presupuesto_total": 5462735.750000014,
+        "por_touchpoint": [
+          {
+            "touchpoint": "YT_CTV",
+            "inversion": 819410.3625000864,
+            "grps": 299.0247440795615,
+            "impactos_miles": 52092.20359186814,
+            "alcance": 0.2690855850801695
+          },
+          {
+            "touchpoint": "Netflix",
+            "inversion": 928665.0774999519,
+            "grps": 39.865493476070895,
+            "impactos_miles": 6944.848021985879,
+            "alcance": 0.0903917362951863
+          },
+          {
+            "touchpoint": "Prime",
+            "inversion": 819410.3625000004,
+            "grps": 30.752920721615,
+            "impactos_miles": 5357.37406015038,
+            "alcance": 0.0516444722072739
+          },
+          {
+            "touchpoint": "MAX",
+            "inversion": 600900.9325000024,
+            "grps": 29.994348677145947,
+            "impactos_miles": 5225.225499999569,
+            "alcance": 0.048906804000634796
+          },
+          {
+            "touchpoint": "Disney",
+            "inversion": 710155.6474999484,
+            "grps": 30.1963308231181,
+            "impactos_miles": 5260.412203702935,
+            "alcance": 0.0399889046346672
+          },
+          {
+            "touchpoint": "Pluto",
+            "inversion": 710155.6475000209,
+            "grps": 37.0591332829208,
+            "impactos_miles": 6455.960431817784,
+            "alcance": 0.029964074201338998
+          },
+          {
+            "touchpoint": "VIX",
+            "inversion": 874037.720000002,
+            "grps": 43.628143530397445,
+            "impactos_miles": 7600.327999999955,
+            "alcance": 0.0299740677026699
+          }
+        ],
+        "totales": {
+          "grps": 510.52111459082994,
+          "impactos_miles": 88936.35180952468,
+          "alcance": 0.45829296497608146
+        }
+      }
+    },
+    {
+      "id": "v-cambio-b",
+      "origen": "simulado",
+      "ejercicio_base_id": "sp-v2",
+      "etiqueta": "Cambio B · -10% presupuesto",
+      "motivo": "Recorte de presupuesto por ajuste corporativo",
+      "autor": "Planeación",
+      "rol": "planner",
+      "fecha": "2026-09-26",
+      "hora": "12:45",
+      "estado": "pendiente",
+      "factor_presupuesto": 0.9,
+      "delta_inversion": -475020.50000020955,
+      "snapshot_touchpoints": [
+        {
+          "nombre": "YT_CTV",
+          "inversion": 641277.675000137
+        },
+        {
+          "nombre": "Netflix",
+          "inversion": 726781.364999947
+        },
+        {
+          "nombre": "Prime",
+          "inversion": 641277.674999968
+        },
+        {
+          "nombre": "MAX",
+          "inversion": 470270.294999942
+        },
+        {
+          "nombre": "Disney",
+          "inversion": 555773.984999926
+        },
+        {
+          "nombre": "Pluto",
+          "inversion": 555773.984999928
+        },
+        {
+          "nombre": "VIX",
+          "inversion": 684029.519999942
+        }
+      ],
+      "interpolado": {
+        "factor_presupuesto": 0.9,
+        "presupuesto_total": 4275184.49999979,
+        "por_touchpoint": [
+          {
+            "touchpoint": "YT_CTV",
+            "inversion": 641277.675000137,
+            "grps": 234.019364931856,
+            "impactos_miles": 40767.8115066839,
+            "alcance": 0.266499483899638
+          },
+          {
+            "touchpoint": "Netflix",
+            "inversion": 726781.364999947,
+            "grps": 31.1990818508374,
+            "impactos_miles": 5435.09845198884,
+            "alcance": 0.0767867398618412
+          },
+          {
+            "touchpoint": "Prime",
+            "inversion": 641277.674999968,
+            "grps": 24.0675031734366,
+            "impactos_miles": 4192.72752533487,
+            "alcance": 0.0465408196658912
+          },
+          {
+            "touchpoint": "MAX",
+            "inversion": 470270.294999942,
+            "grps": 23.4738380951547,
+            "impactos_miles": 4089.30691304262,
+            "alcance": 0.0470845580335215
+          },
+          {
+            "touchpoint": "Disney",
+            "inversion": 555773.984999926,
+            "grps": 23.6319110789605,
+            "impactos_miles": 4116.84433333248,
+            "alcance": 0.0399299585063121
+          },
+          {
+            "touchpoint": "Pluto",
+            "inversion": 555773.984999928,
+            "grps": 29.0027999605421,
+            "impactos_miles": 5052.49077272616,
+            "alcance": 0.029825903948689
+          },
+          {
+            "touchpoint": "VIX",
+            "inversion": 684029.519999942,
+            "grps": 34.1437645020472,
+            "impactos_miles": 5948.08278260814,
+            "alcance": 0.02986554911223
+          }
+        ],
+        "totales": {
+          "grps": 399.538263592835,
+          "impactos_miles": 69602.362285717,
+          "alcance": 0.444040127421991
+        }
+      }
+    }
+  ],
+  "simulado": {
+    "desviaciones": [
+      {
+        "campana": "CELEBRANDO + LA NETA",
+        "categoria": "CORE",
+        "origen": "simulado",
+        "planeado": 135823600.125329,
+        "real": 123016321,
+        "delta_pct": -9.4
+      },
+      {
+        "campana": "CAMA FRESCA SPIN OFF",
+        "categoria": "CORE",
+        "origen": "simulado",
+        "planeado": 85549131.933891,
+        "real": 91038553,
+        "delta_pct": 6.4
+      },
+      {
+        "campana": "NOVA XS",
+        "categoria": "CORE",
+        "origen": "simulado",
+        "planeado": 150358852.230315,
+        "real": 134211263,
+        "delta_pct": -10.7
+      },
+      {
+        "campana": "PELÍCULA",
+        "categoria": "CORE",
+        "origen": "simulado",
+        "planeado": 108825328.027795,
+        "real": 102185502,
+        "delta_pct": -6.1
+      },
+      {
+        "campana": "NOVA ALFA",
+        "categoria": "CORE",
+        "origen": "simulado",
+        "planeado": 36696883.874452,
+        "real": 40828199,
+        "delta_pct": 11.3
+      },
+      {
+        "campana": "PULSE",
+        "categoria": "CORE",
+        "origen": "simulado",
+        "planeado": 2096961.105502,
+        "real": 2190025,
+        "delta_pct": 4.4
+      },
+      {
+        "campana": "TÁCTICAS (SW, DDLM, DDP, EDIFICIO ALFA)",
+        "categoria": "CORE",
+        "origen": "simulado",
+        "planeado": 30383387.936995,
+        "real": 26808866,
+        "delta_pct": -11.8
+      },
+      {
+        "campana": "ZEN NOVA",
+        "categoria": "ZEN",
+        "origen": "simulado",
+        "planeado": 126341273.489435,
+        "real": 124475463,
+        "delta_pct": -1.5
+      }
+    ],
+    "presupuesto": [
+      {
+        "marca_id": "marca-streaming",
+        "origen": "simulado",
+        "autorizado_origen": "real",
+        "autorizado": 4750205,
+        "comprometido": 2949557,
+        "ejecutado": 2154724
+      },
+      {
+        "marca_id": "marca-multimedia",
+        "origen": "simulado",
+        "autorizado_origen": "real",
+        "autorizado": 50000000,
+        "comprometido": 37271175,
+        "ejecutado": 29153077
+      },
+      {
+        "marca_id": "marca-department-stores",
+        "origen": "simulado",
+        "autorizado_origen": "real",
+        "autorizado": 50000000.0,
+        "comprometido": 44161567,
+        "ejecutado": 26742269
+      },
+      {
+        "marca_id": "marca-sim-aliada",
+        "origen": "simulado",
+        "autorizado_origen": "simulado",
+        "autorizado": 2679116,
+        "comprometido": 2142287,
+        "ejecutado": 1980145
+      },
+      {
+        "marca_id": "marca-sim-norte",
+        "origen": "simulado",
+        "autorizado_origen": "simulado",
+        "autorizado": 3097134,
+        "comprometido": 2156192,
+        "ejecutado": 2026652
+      },
+      {
+        "marca_id": "marca-sim-sur",
+        "origen": "simulado",
+        "autorizado_origen": "simulado",
+        "autorizado": 2536609,
+        "comprometido": 1832184,
+        "ejecutado": 1509630
+      }
+    ],
+    "compromisos": [
+      {
+        "campana": "CELEBRANDO + LA NETA",
+        "medio": "TV Abierta",
+        "proveedor": "Grupo Medios Centro",
+        "origen": "simulado",
+        "monto": 50030020,
+        "facturado": true
+      },
+      {
+        "campana": "CELEBRANDO + LA NETA",
+        "medio": "Tv Paga",
+        "proveedor": "Digital Plus",
+        "origen": "simulado",
+        "monto": 8907746,
+        "facturado": true
+      },
+      {
+        "campana": "CAMA FRESCA SPIN OFF",
+        "medio": "TV Abierta",
+        "proveedor": "Radio Aliada",
+        "origen": "simulado",
+        "monto": 22028800,
+        "facturado": true
+      },
+      {
+        "campana": "CAMA FRESCA SPIN OFF",
+        "medio": "Tv Paga",
+        "proveedor": "Grupo Medios Centro",
+        "origen": "simulado",
+        "monto": 2023773,
+        "facturado": true
+      },
+      {
+        "campana": "NOVA XS",
+        "medio": "TV Abierta",
+        "proveedor": "Radio Aliada",
+        "origen": "simulado",
+        "monto": 39441458,
+        "facturado": false
+      },
+      {
+        "campana": "NOVA XS",
+        "medio": "Tv Paga",
+        "proveedor": "OOH Nacional",
+        "origen": "simulado",
+        "monto": 9003933,
+        "facturado": true
+      },
+      {
+        "campana": "PELÍCULA",
+        "medio": "TV Abierta",
+        "proveedor": "OOH Nacional",
+        "origen": "simulado",
+        "monto": 35429719,
+        "facturado": false
+      },
+      {
+        "campana": "PELÍCULA",
+        "medio": "Tv Paga",
+        "proveedor": "OOH Nacional",
+        "origen": "simulado",
+        "monto": 2951096,
+        "facturado": false
+      },
+      {
+        "campana": "NOVA ALFA",
+        "medio": "TV Abierta",
+        "proveedor": "OOH Nacional",
+        "origen": "simulado",
+        "monto": 6438516,
+        "facturado": true
+      },
+      {
+        "campana": "NOVA ALFA",
+        "medio": "Tv Paga",
+        "proveedor": "OOH Nacional",
+        "origen": "simulado",
+        "monto": 1561670,
+        "facturado": true
+      },
+      {
+        "campana": "PULSE",
+        "medio": "Digital",
+        "proveedor": "OOH Nacional",
+        "origen": "simulado",
+        "monto": 984043,
+        "facturado": true
+      }
+    ],
+    "resultados": [
+      {
+        "marca_id": "marca-streaming",
+        "canal": "TV",
+        "origen": "simulado",
+        "planeado": 1404783,
+        "real": 1173244
+      },
+      {
+        "marca_id": "marca-streaming",
+        "canal": "Digital",
+        "origen": "simulado",
+        "planeado": 1317430,
+        "real": 1298470
+      },
+      {
+        "marca_id": "marca-streaming",
+        "canal": "OOH",
+        "origen": "simulado",
+        "planeado": 764102,
+        "real": 652641
+      },
+      {
+        "marca_id": "marca-streaming",
+        "canal": "Radio",
+        "origen": "simulado",
+        "planeado": 1824484,
+        "real": 2151221
+      },
+      {
+        "marca_id": "marca-multimedia",
+        "canal": "TV",
+        "origen": "simulado",
+        "planeado": 19175290,
+        "real": 18943796
+      },
+      {
+        "marca_id": "marca-multimedia",
+        "canal": "Digital",
+        "origen": "simulado",
+        "planeado": 8130294,
+        "real": 7306496
+      },
+      {
+        "marca_id": "marca-multimedia",
+        "canal": "OOH",
+        "origen": "simulado",
+        "planeado": 17739671,
+        "real": 16355053
+      },
+      {
+        "marca_id": "marca-multimedia",
+        "canal": "Radio",
+        "origen": "simulado",
+        "planeado": 16536853,
+        "real": 19172451
+      },
+      {
+        "marca_id": "marca-department-stores",
+        "canal": "TV",
+        "origen": "simulado",
+        "planeado": 13576590,
+        "real": 13346019
+      },
+      {
+        "marca_id": "marca-department-stores",
+        "canal": "Digital",
+        "origen": "simulado",
+        "planeado": 23444182,
+        "real": 26916699
+      },
+      {
+        "marca_id": "marca-department-stores",
+        "canal": "OOH",
+        "origen": "simulado",
+        "planeado": 19571547,
+        "real": 18927515
+      },
+      {
+        "marca_id": "marca-department-stores",
+        "canal": "Radio",
+        "origen": "simulado",
+        "planeado": 20382202,
+        "real": 22211053
+      },
+      {
+        "marca_id": "marca-sim-aliada",
+        "canal": "TV",
+        "origen": "simulado",
+        "planeado": 1243311,
+        "real": 1351349
+      },
+      {
+        "marca_id": "marca-sim-aliada",
+        "canal": "Digital",
+        "origen": "simulado",
+        "planeado": 1209548,
+        "real": 1156085
+      },
+      {
+        "marca_id": "marca-sim-aliada",
+        "canal": "OOH",
+        "origen": "simulado",
+        "planeado": 618603,
+        "real": 705827
+      },
+      {
+        "marca_id": "marca-sim-aliada",
+        "canal": "Radio",
+        "origen": "simulado",
+        "planeado": 746341,
+        "real": 757795
+      },
+      {
+        "marca_id": "marca-sim-norte",
+        "canal": "TV",
+        "origen": "simulado",
+        "planeado": 1259169,
+        "real": 1344023
+      },
+      {
+        "marca_id": "marca-sim-norte",
+        "canal": "Digital",
+        "origen": "simulado",
+        "planeado": 890723,
+        "real": 1006018
+      },
+      {
+        "marca_id": "marca-sim-norte",
+        "canal": "OOH",
+        "origen": "simulado",
+        "planeado": 1044321,
+        "real": 1228878
+      },
+      {
+        "marca_id": "marca-sim-norte",
+        "canal": "Radio",
+        "origen": "simulado",
+        "planeado": 1327404,
+        "real": 1489880
+      },
+      {
+        "marca_id": "marca-sim-sur",
+        "canal": "TV",
+        "origen": "simulado",
+        "planeado": 498561,
+        "real": 422782
+      },
+      {
+        "marca_id": "marca-sim-sur",
+        "canal": "Digital",
+        "origen": "simulado",
+        "planeado": 917260,
+        "real": 982477
+      },
+      {
+        "marca_id": "marca-sim-sur",
+        "canal": "OOH",
+        "origen": "simulado",
+        "planeado": 1157628,
+        "real": 1029481
+      },
+      {
+        "marca_id": "marca-sim-sur",
+        "canal": "Radio",
+        "origen": "simulado",
+        "planeado": 1054993,
+        "real": 1057381
+      }
+    ]
+  }
+}

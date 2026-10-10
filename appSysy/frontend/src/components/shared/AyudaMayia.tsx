@@ -25,12 +25,12 @@ import {
   updateBriefField, updateTouchpointInversion, registrarCambioInversion, setCeldaFlow, registrarCambioFlow, getFilaFlow, mock,
 } from '../../data/store';
 import { ACTOR_POR_ROL, type Rol, type Ejercicio } from '../../data/types';
-import { interpolarEscenario, touchpointQueMasPierdeAlcance } from '../../data/interpolate';
+import { interpolarEscenario, touchpointQueMasPierdeAlcance } from '../../domain/interpolate';
 import { resumenMonitoreo, esNoTransmitido } from '../../data/metricas';
 import {
   generarPlanes, parsearComando, validarPlan, efectoEstimado, explicacionPlan, medioMasAfectado,
   type PlanPropuesto, type PlanRechazado,
-} from '../../data/planesIA';
+} from '../../domain/planesIA';
 import { parsearComandoBrief, parsearComandoFlow, type CambioBrief, type CambioFlowCelda } from '../../data/comandosVoz';
 import { useSpeech } from './useSpeech';
 import { useVoiceInput } from './useVoiceInput';

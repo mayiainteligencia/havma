@@ -3,7 +3,7 @@
 // cada TRP por nuevo$/base$ de su semana. Para el demo; el mapeo exacto sería con el backend.
 import ExcelJS from 'exceljs/dist/exceljs.min.js';
 import { mock, getFilaFlow, type OverridesState } from './store';
-import { distribuirSemanas } from './distribuirSemanas';
+import { distribuirSemanas } from '../domain/distribuirSemanas';
 
 const norm = (s: string) => s.trim().replace(/\s+/g, ' ').toUpperCase();
 

@@ -1,0 +1,13 @@
+/* Solo estructura. Colores y fuentes salen de branding.ts. */
+:root {
+  --radius-pill: 999px;
+  --radius-card: 24px;
+  --shadow-card: 0 2px 16px rgba(0, 0, 0, 0.06);
+  --font: var(--font-body);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body { font-family: var(--font-body); background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; }
+h1, h2, h3 { font-family: var(--font-title); }
+.dash__title { color: var(--title); }
+button, input { font: inherit; color: inherit; }

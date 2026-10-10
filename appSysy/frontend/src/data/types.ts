@@ -186,8 +186,8 @@ export interface MockData {
 // ── Roles (config/menu.ts trae las vistas; esto solo dice cuáles ve cada rol) ──
 export type Rol = 'ceo' | 'planner' | 'cliente';
 export const VISTAS_POR_ROL: Record<Rol, string[]> = {
-  ceo: ['ejecutiva', 'flowchart', 'presupuesto', 'resultados'],
-  planner: ['planeacion', 'flowchart', 'aprobaciones', 'presupuesto'],
+  ceo: ['ejecutiva', 'flowchart', 'presupuesto', 'resultados', 'widgets'],
+  planner: ['planeacion', 'flowchart', 'aprobaciones', 'presupuesto', 'widgets'],
   cliente: ['cliente', 'flowchart', 'aprobaciones', 'resultados'],
 };
 export const NOMBRE_ROL: Record<Rol, string> = { ceo: 'CEO', planner: 'Planner', cliente: 'Cliente' };
